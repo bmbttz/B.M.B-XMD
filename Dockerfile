@@ -9,7 +9,7 @@ RUN apt-get update && \
   npm i pm2 -g && \
   rm -rf /var/lib/apt/lists/*
   
-RUN  git clone 😳  /root/b.m.b_BOt
+RUN  git clone https://github.com/bmb200/B.M.B-XMD  /root/b.m.b_BOt
 WORKDIR /root/b.m.b_Bot/
 
 
