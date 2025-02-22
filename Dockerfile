@@ -9,8 +9,8 @@ RUN apt-get update && \
   npm i pm2 -g && \
   rm -rf /var/lib/apt/lists/*
   
-RUN  git clone https://github.com/bmb200/B.M.B-XMD /root/bmb200
-WORKDIR /root/bmb200/
+RUN  git clone https://github.com/bmb200/B.M.B-XMD  /root/Hans_BOt
+WORKDIR /root/kinghansmd/
 
 
 
