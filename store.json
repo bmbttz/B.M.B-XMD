@@ -1,0 +1,40 @@
+{
+    "messages": {
+        "chat-id-1": [
+            {
+                "key": {
+                    "id": "message-id-1",
+                    "remoteJid": "chat-id-1",
+                    "fromMe": false,
+                    "participant": "sender-id-1@s.whatsapp.net"
+                },
+                "message": {
+                    "conversation": "Hello World"
+                },
+                "mediaInfo": null,
+                "timestamp": 1668000000
+            }
+        ],
+        "chat-id-2": [
+            {
+                "key": {
+                    "id": "message-id-2",
+                    "remoteJid": "chat-id-2",
+                    "fromMe": false,
+                    "participant": "sender-id-2@s.whatsapp.net"
+                },
+                "message": {
+                    "imageMessage": {
+                        "mimetype": "image/jpeg",
+                        "caption": "Check this out!"
+                    }
+                },
+                "mediaInfo": {
+                    "filePath": "deleted_media/message-id-2.jpg",
+                    "mimeType": "image/jpeg"
+                },
+                "timestamp": 1668000001
+            }
+        ]
+    }
+}

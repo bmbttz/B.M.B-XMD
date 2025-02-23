@@ -1,0 +1,162 @@
+
+{
+  "name":"𝙱.𝙼.𝙱 𝚇𝙼𝙳",
+  "description":"Best whatsapp bot developed by 𝙱𝙼𝙱 𝚇𝙼𝙳",
+  "keywords":["bot","node","baileys","whatsapp"],
+  "logo":"https://telegra.ph/file/0c225f7da5616cdcbec80.jpg",
+  "repository":"https://github.com/bmb200/B.M.B-XMD.git",
+  "succes_url":"/",
+  "stack":"heroku-24",
+  "env":{
+    "PREFIX":
+    {
+      "description":"choose your prefix for your bot",
+      "value":".",
+      "required":true
+    },
+"AUTO_REACT":
+    {
+      "description":"Enter yes for your bot to auto react",
+      "value":"no",
+      "required":false
+    },
+"ANTICALL":
+    {
+      "description":"Enter yes for your bot to auto reject calls",
+      "value":"no",
+      "required":false
+    },
+"AUTO_BIO":
+    {
+      "description":"Enter yes for your bot to auto bio",
+      "value":"yes",
+      "required":false
+    },
+
+    "AUTO_READ_STATUS":
+    {
+      "description":"Your status will be reading automatically(type yes to active or no to deactive  ; don't write in capital letter)",
+      "value":"yes",
+      "required":false
+    }, "AUTO_DOWNLOAD_STATUS":
+    {
+      "description":"You status will be sending status to your inbox automatically (type yes to active or no to deactive ; don't write in capital letter)",
+      "value":"no",
+      "required":false
+    },
+    "AUTO_READ":
+    {
+      "description":"Your contact  will be reading messages automatically(type yes to active or no to deactive  ; don't write in capital letter)",
+      "value":"no",
+      "required":false   
+      },
+     "PM_PERMIT" :
+     {
+      "description":"Other user can't use your bot in pm (type yes to active or no to deactive ; don't write in capital letter)",
+      "value":"no",
+      "required":false
+    }
+    ,
+    "BOT_NAME" : {
+       
+      "description":"put A name for your bot",
+      "value":"𝙱.𝙼.𝙱 𝚇𝙼𝙳",
+      "required":false
+
+    } ,
+     "BOT_MENU_LINKS" : {
+    
+      "description":"add one or many link for your bot menu  ; eg : url1,url2,url3.....",
+      "value":"https://files.catbox.moe/n4vmt4.jpg",
+      "required":false
+       
+     },
+    "PUBLIC_MODE":
+    {
+      "description":"type yes to put your bot on public mode or no to put it on private mod",
+      "value":"yes",
+      "required":false
+    }
+	,
+    "HEROKU_API_KEY": {
+    "description": "insert your heroku api-key (this is optionnal)",
+	    "value":"HRKU-c179b3c5-bd5c-457f-8311-b9ab0a5d4fcc",
+     "required" :false
+    },
+  "HEROKU_APP_NAME": {
+    "description": "insert your heroku APP NAME (this is optionnal)",
+	  
+     "required" :false
+    }  
+	  ,
+    "NUMERO_OWNER":
+    {
+      
+    "description":"Owner Number",   
+      "value":"255772341432",
+    "required":false
+      
+    },
+    "OWNER_NAME":
+    {
+    
+    "desc": "Owner name",
+    "required": false,
+    "value": "𝙱.𝙼.𝙱 𝚇𝙼𝙳"
+  },
+    "SESSION_ID":{
+    "description":"put your session ID , the code you received from from 𝙱.𝙼.𝙱 𝚇𝙼𝙳 site",   
+      "value":"",
+     "required":true
+  },
+    "WARN_COUNT":
+  {
+    "desc": "this is the limit of warn for warning commandes",
+    "required": false,
+    "value": "3"
+  },
+  "STARTING_BOT_MESSAGE":
+  {
+    "description": "if you don't want startting-bot-message put no else put yes",
+    "required": true,
+    "value": "yes"
+  },
+  "PRESENCE":{
+    "description":"Mark your presence: 1 to indicate that you are online even if you are not. 2 to indicate that you are currently typing a message. 3 to indicate that you are currently recording an audio. Or leave the field blank to indicate your real state.",
+    "value":"",
+    "required": false
+  },
+  "ANTI_DELETE_MESSAGE" : {
+    "description": "if you want to enable anti delete message put yes else put no",
+    "value": "yes",
+        "required": false
+  }
+  },
+
+        
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    },
+
+    {
+      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
+    },
+    {
+      "url": "https://github.com/clhuang/heroku-buildpack-webp-binaries.git"
+    }
+  ],
+
+  "formation": {
+                "worker": {
+                        "quantity": 1,
+                        "size": "basic"
+                }
+        },
+
+  "addons":[
+    {
+      "plan":"heroku-postgresql"
+    }
+  ]
+}
