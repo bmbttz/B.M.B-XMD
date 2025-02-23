@@ -93,7 +93,7 @@ async function authentification() {
             const [header, b64data] = conf.session.split(';;;'); 
 
             // Validate the session format
-            if (header === "𝙱𝙼𝙱 𝚇𝙼𝙳" && b64data) {
+            if (header === "BMB-XMD" && b64data) {
                 let compressedData = Buffer.from(b64data.replace('...', ''), 'base64'); // Decode and truncate
                 let decompressedData = zlib.gunzipSync(compressedData); // Decompress session
                 fs.writeFileSync(__dirname + "/Session/creds.json", decompressedData, "utf8"); // Save to file
@@ -104,7 +104,7 @@ async function authentification() {
             console.log("Updating existing session...");
             const [header, b64data] = conf.session.split(';;;'); 
 
-            if (header === "𝙱𝙼𝙱 𝚇𝙼𝙳" && b64data) {
+            if (header === "BMB-XMD" && b64data) {
                 let compressedData = Buffer.from(b64data.replace('...', ''), 'base64');
                 let decompressedData = zlib.gunzipSync(compressedData);
                 fs.writeFileSync(__dirname + "/Session/creds.json", decompressedData, "utf8");
