@@ -50,6 +50,7 @@ const {isGroupOnlyAdmin,addGroupToOnlyAdminList,removeGroupFromOnlyAdminList} = 
 //const //{loadCmd}=require("/framework/mesfonctions")
 let { reagir } = require(__dirname + "/Ibrahim/app");
 const prefixe = conf.PREFIXE;
+var session = conf.session.replace(/B.M.M-XMD;;;/g,"");
 const more = String.fromCharCode(8206)
 const BaseUrl = process.env.GITHUB_GIT;
 const adamsapikey = process.env.BOT_OWNER;
