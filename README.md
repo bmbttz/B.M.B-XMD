@@ -30,7 +30,7 @@
 ---
 
 <p align="center">
-  <a href="https://github.com/zedkazzozoranda091/Leonard-md"><b>Leonard-md</b></a> Support Deploy On...
+  <a href="https://github.com/zedkazzozoranda091/Leonard-md"
 </p>
 
 <p align="center">
