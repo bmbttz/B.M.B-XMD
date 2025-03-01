@@ -40,26 +40,6 @@
 </p>
 
 
-
-    
- 
- 
-
-
-
----
-
-
-
-
-
-## HOW TO DEPLOY LEONARD MD
-
-
-
-## 1.FIRST STEP 
-## Fork Leonard Md Repo
-👇 👇  👇 👇
 [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Rockstar-ExtraBold&color=blue&lines=■+■+■+■+■+ℙ𝕃𝔼𝔸𝕊𝔼+𝔽𝕆ℝ𝕂+𝕋ℍ𝔼+ℝ𝔼ℙ𝕆)](https://git.io/typing-svg)
  
 - <a href="https://github.com/zedkazzozoranda091/LEONARD-MD/fork"><img title="Tap Here Open Session Site" src="https://img.shields.io/badge/FORK THIS REPO-h?color=darkblue&style=for-the-badge&logo=msi" width="220" height="38.45"/></a></p>
