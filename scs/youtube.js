@@ -38,7 +38,7 @@ adams({
           title: firstVideo.title,
           body: "𝙱.𝙼.𝙱-𝚇𝙼𝙳 downloader",
           mediaType: 1,
-          thumbnailUrl: "https://files.catbox.moe/5xm3mi.jpg",
+          thumbnailUrl: "https://files.catbox.moe/6p6jkb.jpg",
           sourceUrl: "https://whatsapp.com/channel/0029Vb2eknR59PwL1OK4wR24",
           renderLargerThumbnail: false,
           showAdAttribution: true,
