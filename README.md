@@ -15,7 +15,7 @@
 </p>
   <p align="center">
 <a href="https://github.com/bmb200?tab=followers"><img title="Followers" src="https://img.shields.io/github/followers/bmb200?label=Followers&style=social"></a>
-<a href="https://github.com/bmb200/𝙱.𝙼.𝙱-𝚇𝙼𝙳/stargazers/"><img title="STARS" src="https://img.shields.io/github/stars/Zedkazzozoranda091/𝙱.𝙼.𝙱-𝚃𝙴𝙲𝙷?&style=social"></a>
+<a href="https://github.com/bmb200/𝙱.𝙼.𝙱-𝚇𝙼𝙳/stargazers/"><img title="STARS" src="https://img.shields.io/github/stars/bmb200/𝙱.𝙼.𝙱-𝚃𝙴𝙲𝙷?&style=social"></a>
 <a href="https://github.com/bmb200/𝙱.𝙼.𝙱-𝚇𝙼𝙳/network/members"><img title="Forks" src="https://github.com/bmb200/B.M.B-XMD/fork/bmb200/𝙱.𝙼.𝙱-𝚇𝙼𝙳?style=social"></a>
 <a href="https://github.com/bmb200"><img title="Watching" src="https://img.shields.io/github/watchers/zedkazzozoranda091/leonard-md?label=Watching&style=social"></a>
 
