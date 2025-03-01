@@ -1,4 +1,4 @@
-   ###  LEONARD MD WA BOT
+   ###  𝙱.𝙼.𝙱-𝚇𝙼𝙳 WA BOT
    
 
  <a href="https://github.com/DenverCoder1/readme-typing-svg"><img src="https://readme-typing-svg.herokuapp.com?font=Rockstar-ExtraBold&color=F33A6A&lines=𝐖𝐞𝐥𝐜𝐨𝐦𝐞+𝐓𝐨+𝙱.𝙼.𝙱+tech+𝐁𝐎𝐓.;𝙿𝙾𝚆𝙴𝚁𝙳+𝙱𝚈:+𝐌𝐑+𝙱.𝙼.𝙱-𝚇𝙼𝙳+𝐓𝐄𝐂𝐇;𝐜𝐫𝐞𝐚𝐭𝐞𝐝+𝐛𝐲:+𝙱.𝙼.𝙱-𝚇𝙼𝙳+𝐌𝐃;𝐌𝐑:+𝐓𝐄𝐂𝐇𝐍𝐎𝐋𝐎𝐆𝐘+🥷;𝐧𝐞𝐰+𝐯𝐢𝐫𝐬𝐢𝐨𝐧+💥;2025+-+2026.&heart;++;Self-taught+Back-Created+By,;Ibrahim+Adams+Am+The,;Best+Is+Bot+For+You+To,;Deploy..<3"></a>
@@ -51,33 +51,26 @@
 
 CONTACT DEVELOPER ON WHATSAPP 
 
-<a href="https://wa.me/message/255655192476" target="_blank">
+<a href="https://wa.me/message/255772341432" target="_blank">
     <img alt="whatsapp Group" src="https://img.shields.io/badge/leonard tech contact -25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
 
 
   
  
-<a href="https://whatsapp.com/channel/0029VakLfckBlHpYVxryFJ14" target="_blank">
-    <img alt="whatsapp Group" src="https://img.shields.io/badge/ LEONARD_TECH  CHANNEL -25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
+<a href="https://whatsapp.com/channel/0029Vb2eknR59PwL1OK4wR24" target="_blank">
+    <img alt="whatsapp Group" src="https://img.shields.io/badge/ 𝙱.𝙼.𝙱-𝚇𝙼𝙳  CHANNEL -25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
+    
 
-     
-
-<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=33&pause=1000&color=5513F7&width=435&lines=keep+using+LEONARD+MD😊" alt="Typing SVG" /></a>
-
-
-
-
-
-*KINGDOM*
+*gallery*
 
 <table>
   <tr>
-    <td>𝑲𝒊𝒏𝒈 𝑳𝒆𝒐𝒏𝒂𝒓𝒅👑</td></td>
+    <td>𝑲𝒊𝒏𝒈 𝙱.𝙼.𝙱-𝚇𝙼𝙳👑</td></td>
     <td>𝑺𝒖𝒑𝒑𝒐𝒓𝒕 𝑪𝒉𝒂𝒏𝒏𝒆𝒍</td>
   </tr>
   <tr>
-    <td><a href="https://wa.me/255655192476?"><img src="https://files.catbox.moe/1opvdg.jpg" width="180"</td>
-    <td><a href="https://whatsapp.com/channel/0029VakLfckBlHpYVxryFJ14"><img src="https://files.catbox.moe/38ofr2.jpg" width="180"</td>
+    <td><a href="https://wa.me/255772341432?"><img src="https://files.catbox.moe/1opvdg.jpg" width="180"</td>
+    <td><a href="https://whatsapp.com/channel/0029Vb2eknR59PwL1OK4wR24"><img src="https://files.catbox.moe/38ofr2.jpg" width="180"</td>
   </tr>
 </table>
 
