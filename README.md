@@ -48,14 +48,6 @@
 
 star✨ my repo if you like this bot🤖
 
-
-## 2.SECOND STEP 
-
-
- GET SESSION ID BY
-
-
-
 [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Rockstar-ExtraBold&color=blue&lines=■+■+■+■+■+𝕋ℍ𝕀𝕊+𝕀𝕊+𝕊𝔼𝕊𝕊𝕀𝕆ℕ+𝕊𝔼𝕋𝔼😎)](https://git.io/typing-svg)
 
 
