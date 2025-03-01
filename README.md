@@ -75,23 +75,6 @@
 
 ---
 
-## 🌟 Key Features
-
----
-
-## 💻 GitHub Repo Activity
-
-<p align="center">
-  <!-- GitHub Repo Activity Stats -->
-  <img src="https://github-readme-stats.vercel.app/api?username=devibraah&show_icons=true&hide_title=true&count_private=true&hide=prs&theme=radical" alt="GitHub Repo Stats" width="800">
-
-  <!-- Repo Activity Stats Screen -->
-  <img src="https://github-readme-stats.vercel.app/api/pin/?username=devibraah&repo=BWM-XMD" alt="Pinned GitHub Repo Activity" width="800">
-
-  
-
----
-
 ## 📸 Gallery
 
 <p align="center">
