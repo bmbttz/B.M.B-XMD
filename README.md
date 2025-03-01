@@ -15,16 +15,14 @@
 </p>
   <p align="center">
 <a href="https://github.com/zedkazzozoranda091?tab=followers"><img title="Followers" src="https://img.shields.io/github/followers/Zedkazzozoranda091?label=Followers&style=social"></a>
-<a href="https://github.com/zedkazzozoranda091/leonard-md/stargazers/"><img title="STARS" src="https://img.shields.io/github/stars/Zedkazzozoranda091/leonard-md?&style=social"></a>
+<a href="https://github.com/zedkazzozoranda091/leonard-md/stargazers/"><img title="STARS" src="https://img.shields.io/github/stars/Zedkazzozoranda091/𝙱.𝙼.𝙱-𝚃𝙴𝙲𝙷?&style=social"></a>
 <a href="https://github.com/zedkazzozoranda091/leonard-md/network/members"><img title="Forks" src="https://img.shields.io/github/forks/zedkazzozoranda091/leonard-md?style=social"></a>
 <a href="https://github.com/zedkazzozoranda091/leonard-md/watchers"><img title="Watching" src="https://img.shields.io/github/watchers/zedkazzozoranda091/leonard-md?label=Watching&style=social"></a>
 
 </p>
-<p align="center"><img src="https://profile-counter.glitch.me/{zedkazzozoranda091}/count.svg" alt="leonard-md :: Visitor's Count"/></p>
+<p align="center"><img src="https://profile-counter.glitch.me/{zedkazzozoranda091}/count.svg" alt="𝙱.𝙼.𝙱-𝚇𝙼𝙳 :: Visitor's Count"/></p>
 
 ---
-
-
 
 
 ---
