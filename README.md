@@ -25,10 +25,7 @@
 ---
 
 
-</a>
-  <div align="center">
-  <img src="https://spogit.vercel.app/api?theme=dark&black=true&scan=true" alt="Widget with the current Spotify song"  />
-</div>
+
 
 ---
 
@@ -117,18 +114,6 @@ star✨ my repo if you like this bot🤖
     - <a href='https://dashboard.heroku.com/new?template=https://github.com/zedkazzozoranda091/LEONARD-MD/tree/main' target="_darkblue"><img alt='DEPLOY TO HEROKU' src="https://img.shields.io/badge/Deploy%20To%20Heroku-darkblue?style=for-the-badge&logo=heroku" width="200" height="38.45"/></a></p>
 
 
-### DEPLOY ON RENDER
-
-1. If you don't have an account in RENDER, create one and deploy.
-
-
-
-   <br>
-    <a href='https://dashboard.render.com/select-repo?type=web' target="_darkblue"><img alt='DEPLOY' src='https://img.shields.io/badge/-DEPLOY-red?style=for-the-badge&logo=render&logoColor=white'/></a>
-
-
-
-
    ###
 
 CONTACT DEVELOPER ON WHATSAPP 
@@ -142,27 +127,6 @@ CONTACT DEVELOPER ON WHATSAPP
 <a href="https://whatsapp.com/channel/0029VakLfckBlHpYVxryFJ14" target="_blank">
     <img alt="whatsapp Group" src="https://img.shields.io/badge/ LEONARD_TECH  CHANNEL -25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
 
-
-
-
-
-  ## License
-
-The WhatsApp Bot LEONARD MD is released under the [MIT License](https://opensource.org/licenses/MIT).
-
- <a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=EB+Garamond&weight=800&size=28&duration=4000&pause=1000&random=false&width=435&lines=+•Role+number-one; don't-trust+any one+🖐️😊;DEVELOPED+BY+LEONARD+TECH;RELEASED+DATE+01%2F10%2F2024." alt="Typing SVG" /></a>
-
-
-🌟 𝕋ℍ𝔸ℕ𝕂 𝕐𝕆𝕌 𝔽𝕆ℝ ℂℍ𝕆𝕆𝕊𝕀ℕ𝔾 LEONARD🍀_MD 🌟
-
-<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&random=false&width=435&lines=THIS+IS+LEONARD- MD+MADE+IN+TANZANIA+🇹🇿♥️" alt="Typing SVG" /></a>
-
-## 𝔻𝔼𝕍𝔼𝕃𝕆ℙ𝔼ℝ𝕊 :
-
-- [**LEONARD TECH**](http://github.com/zedkazzozoranda091)
-- [**BONIPHACE TECH**](http://github.com/boniphace478)
-
-★im born to win😎. ©
      
 
 <a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=33&pause=1000&color=5513F7&width=435&lines=keep+using+LEONARD+MD😊" alt="Typing SVG" /></a>
