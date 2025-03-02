@@ -69,8 +69,8 @@ CONTACT DEVELOPER ON WHATSAPP
     <td>𝑺𝒖𝒑𝒑𝒐𝒓𝒕 𝑪𝒉𝒂𝒏𝒏𝒆𝒍</td>
   </tr>
   <tr>
-    <td><a href="https://wa.me/255772341432?"><img src="https://files.catbox.moe/1opvdg.jpg" width="180"</td>
-    <td><a href="https://whatsapp.com/channel/0029Vb2eknR59PwL1OK4wR24"><img src="https://files.catbox.moe/38ofr2.jpg" width="180"</td>
+    <td><a href="https://wa.me/255772341432?"><img src="https://files.catbox.moe/4fqgva.jpg" width="180"</td>
+    <td><a href="https://whatsapp.com/channel/0029Vb2eknR59PwL1OK4wR24"><img src="https://files.catbox.moe/56mfqe.jpg" width="180"</td>
   </tr>
 </table>
 
