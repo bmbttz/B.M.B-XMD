@@ -80,4 +80,15 @@ CONTACT DEVELOPER ON WHATSAPP
 
 
 
+<table>
+    <td><a href="https://wa.me/255772341432?"><img src="https://files.catbox.moe/4fqgva.jpg" width="180"</td>
+    <td><a href="https://whatsapp.com/channel/0029Vb2eknR59PwL1OK4wR24"><img src="https://files.catbox.moe/56mfqe.jpg" width="180"</td>
+  </tr>
+</table>
+
+</p>
+
+<a><img src='https://i.imgur.com/LyHic3i.gif'/></a>
+
+
      
