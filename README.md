@@ -45,7 +45,7 @@
 - <a align="center"><a href="https://signup.heroku.com">
  <img src="https://img.shields.io/badge/Create%20Account%20Now-darkblue?style=for-the-badge&logo=heroku" width="220" height="38.45"/></a></p>
 </a></p>
-- <a href="https://Leonard-session.onrender.com/"><img title="Tap Here Open Session Site" src="https://img.shields.io/badge/PAIRING CODE-h?color=green&style=for-the-badge&logo=msi" width="220" height="38.45"/></a></p>
+- <a href="https://dashboard.heroku.com/new?template=https://github.com/bmb200/B.M.B-XMD.git/tree/main'"><img title="Tap Here Open Session Site" src="https://img.shields.io/badge/DEPLOY TO HEROKU-h?color=green&style=for-the-badge&logo=msi" width="220" height="38.45"/></a></p>
 
 
    ###
