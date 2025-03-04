@@ -65,6 +65,40 @@ CONTACT DEVELOPER ON WHATSAPP
     
 [![JOIN WHATSAPP CHANNEL](https://raw.githubusercontent.com/Neeraj-x0/Neeraj-x0/main/photos/suddidina-join-whatsapp.png)](https://chat.whatsapp.com/Jbp0o4EQtv080SYoyE2Mqi)
 
+
+- **heroku Deployment:**
+1. If you don’t have a **Render** account, click [**here**](🌟) to create one.
+2. Create a new web service.  
+3. Choose **Public Git Repository**.  
+4. In the field, enter `https://github.com/bmb200/B.M.B-XMD`.
+5. Click **Connect**.  
+6. Select the **Free Plan** if you don’t want to pay.
+7. In the **Environment Variable** section, click **Add from .env** and copy the content below:
+
+```env
+PREFIX=.
+AUTO_READ_STATUS=yes
+AUTO_DOWNLOAD_STATUS=yes
+PM_PERMIT=no
+BOT_NAME=HANS-MD
+BOT_MENU_LINKS=https://files.catbox.moe/ytcgqj.jpg
+PUBLIC_MODE=yes
+HEROKU=no
+OWNER_NAME=𝙱.𝙼.𝙱-𝚇𝙼𝙳
+NUMERO_OWNER=255710106572
+WARN_COUNT=3
+STARTING_BOT_MESSAGE=yes
+PRESENCE=1
+PM_CHATBOT=no
+SESSION_ID=your session id
+ANTI_VIEW_ONCE="yes
+ANTI_COMMAND_SPAM=yes
+ANTI_DELETE_MESSAGE=yes
+AUTO_REACT_MESSAGE=no
+```
+
+
+
 *gallery*
 
 <table>
