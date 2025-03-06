@@ -1,12 +1,12 @@
 const { adams } = require("../Ibrahim/adams");
 const axios = require('axios');
 const ytSearch = require('yt-search');
-const ytdl = require('ytdl-core');
+const conf = require(__dirname + '/../set');
 
-// Command for downloading audio (MP3)
+// Define the command with aliases for play
 adams({
-  nomCom: "play",  // Changed to a unique command name
-  aliases: ["song", "audio", "mp3"],
+  nomCom: "play",
+  aliases: ["song", "playdoc", "audio", "mp3"],
   categorie: "Search",
   reaction: "🎵"
 }, async (dest, zk, commandOptions) => {
@@ -31,59 +31,106 @@ adams({
     const firstVideo = searchResults.videos[0];
     const videoUrl = firstVideo.url;
 
-    // Send a fast response to indicate downloading
-    const fastResponse = {
-      text: `*BMB XMD is downloading ${firstVideo.title}*`,
-      contextInfo: {
-        externalAdReply: {
-          title: firstVideo.title,
-          body: "𝙱.𝙼.𝙱-𝚇𝙼𝙳 downloader",
-          mediaType: 1,
-          thumbnailUrl: "https://files.catbox.moe/6p6jkb.jpg",
-          sourceUrl: "https://whatsapp.com/channel/0029Vb2eknR59PwL1OK4wR24",
-          renderLargerThumbnail: false,
-          showAdAttribution: true,
-        },
-      },
-    };
-    await zk.sendMessage(dest, fastResponse, { quoted: ms });
-
-    // Using ytdl-core to download the audio directly
-    const stream = ytdl(videoUrl, { filter: 'audioonly' });
-
-    // Send audio file
-    const audioPayload = {
-      audio: { url: stream },
-      mimetype: 'audio/mp4',
-      contextInfo: {
-        externalAdReply: {
-          title: firstVideo.title,
-          body: `🎶 ${firstVideo.title} | Download complete`,
-          mediaType: 1,
-          sourceUrl: 'https://whatsapp.com/channel/0029Vb2eknR59PwL1OK4wR24',
-          thumbnailUrl: firstVideo.thumbnail,
-          renderLargerThumbnail: true,
-          showAdAttribution: true,
-        },
-      },
+    // Function to get download data from APIs
+    const getDownloadData = async (url) => {
+      try {
+        const response = await axios.get(url);
+        return response.data;
+      } catch (error) {
+        console.error('Error fetching data from API:', error);
+        return { success: false };
+      }
     };
 
-    // Send the downloaded audio to the user
-    await zk.sendMessage(dest, audioPayload, { quoted: ms });
+    // List of APIs to try
+    const apis = [
+      `https://api-rin-tohsaka.vercel.app/download/ytmp4?url=${encodeURIComponent(videoUrl)}`,
+      `https://api.davidcyriltech.my.id/download/ytmp3?url=${encodeURIComponent(videoUrl)}`,
+      `https://www.dark-yasiya-api.site/download/ytmp3?url=${encodeURIComponent(videoUrl)}`,
+      `https://api.giftedtech.web.id/api/download/dlmp3?url=${encodeURIComponent(videoUrl)}&apikey=gifted-md`,
+      `https://api.dreaded.site/api/ytdl/audio?url=${encodeURIComponent(videoUrl)}`
+    ];
+
+    let downloadData;
+    for (const api of apis) {
+      downloadData = await getDownloadData(api);
+      if (downloadData && downloadData.success) break;
+    }
+
+    // Check if a valid download URL was found
+    if (!downloadData || !downloadData.success) {
+      return repondre('Failed to retrieve download URL from all sources. Please try again later.');
+    }
+
+    const downloadUrl = downloadData.result.download_url;
+    const videoDetails = downloadData.result;
+
+    // Prepare the message payload with external ad details
+    const messagePayloads = [
+      {
+        audio: { url: downloadUrl },
+        mimetype: 'audio/mp4',
+        contextInfo: {
+          externalAdReply: {
+            title: videoDetails.title,
+            body: videoDetails.title,
+            mediaType: 1,
+            sourceUrl: conf.GURL,
+            thumbnailUrl: firstVideo.thumbnail,
+            renderLargerThumbnail: false,
+            showAdAttribution: true,
+          },
+        },
+      },
+      {
+        document: { url: downloadUrl },
+        mimetype: 'audio/mpeg',
+        contextInfo: {
+          externalAdReply: {
+            title: videoDetails.title,
+            body: videoDetails.title,
+            mediaType: 1,
+            sourceUrl: conf.GURL,
+            thumbnailUrl: firstVideo.thumbnail,
+            renderLargerThumbnail: false,
+            showAdAttribution: true,
+          },
+        },
+      },
+      {
+        document: { url: downloadUrl },
+        mimetype: 'audio/mp4',
+        contextInfo: {
+          externalAdReply: {
+            title: videoDetails.title,
+            body: videoDetails.title,
+            mediaType: 1,
+            sourceUrl: conf.GURL,
+            thumbnailUrl: firstVideo.thumbnail,
+            renderLargerThumbnail: false,
+            showAdAttribution: true,
+          },
+        },
+      }
+    ];
+
+    // Send the download link to the user for each payload
+    for (const messagePayload of messagePayloads) {
+      await zk.sendMessage(dest, messagePayload, { quoted: ms });
+    }
 
   } catch (error) {
-    console.error('Error during download process:', error.message);
+    console.error('Error during download process:', error);
     return repondre(`Download failed due to an error: ${error.message || error}`);
   }
 });
 
-
-// Command for downloading video (MP4)
+// Define the command with aliases for video
 adams({
-  nomCom: "video",  // Changed to a unique command name
-  aliases: ["vide", "mp4"],
+  nomCom: "video",
+  aliases: ["videodoc", "film", "mp4"],
   categorie: "Search",
-  reaction: "🎬"
+  reaction: "🎥"
 }, async (dest, zk, commandOptions) => {
   const { arg, ms, repondre } = commandOptions;
 
@@ -106,48 +153,81 @@ adams({
     const firstVideo = searchResults.videos[0];
     const videoUrl = firstVideo.url;
 
-    // Send a fast response to indicate downloading
-    const fastResponse = {
-      text: `*BMB XMD is downloading ${firstVideo.title}*`,
-      contextInfo: {
-        externalAdReply: {
-          title: firstVideo.title,
-          body: "𝙱.𝙼.𝙱-𝚇𝙼𝙳 downloader",
-          mediaType: 1,
-          thumbnailUrl: firstVideo.thumbnail,
-          sourceUrl: "https://whatsapp.com/channel/0029Vb2eknR59PwL1OK4wR24",
-          renderLargerThumbnail: true,
-          showAdAttribution: true,
-        },
-      },
-    };
-    await zk.sendMessage(dest, fastResponse, { quoted: ms });
-
-    // Using ytdl-core to download the video directly
-    const stream = ytdl(videoUrl, { format: 'mp4' });
-
-    // Send video file
-    const videoPayload = {
-      video: { url: stream },
-      mimetype: 'video/mp4',
-      contextInfo: {
-        externalAdReply: {
-          title: firstVideo.title,
-          body: `🎬 ${firstVideo.title} | Download complete`,
-          mediaType: 2,
-          sourceUrl: 'https://whatsapp.com/channel/0029Vb2eknR59PwL1OK4wR24',
-          thumbnailUrl: firstVideo.thumbnail,
-          renderLargerThumbnail: true,
-          showAdAttribution: true,
-        },
-      },
+    // Function to get download data from APIs
+    const getDownloadData = async (url) => {
+      try {
+        const response = await axios.get(url);
+        return response.data;
+      } catch (error) {
+        console.error('Error fetching data from API:', error);
+        return { success: false };
+      }
     };
 
-    // Send the downloaded video to the user
-    await zk.sendMessage(dest, videoPayload, { quoted: ms });
+    // List of APIs to try
+    const apis = [
+      `https://api-rin-tohsaka.vercel.app/download/ytmp4?url=${encodeURIComponent(videoUrl)}`,
+      `https://api.davidcyriltech.my.id/download/ytmp4?url=${encodeURIComponent(videoUrl)}`,
+      `https://www.dark-yasiya-api.site/download/ytmp4?url=${encodeURIComponent(videoUrl)}`,
+      `https://api.giftedtech.web.id/api/download/dlmp4?url=${encodeURIComponent(videoUrl)}&apikey=gifted-md`,
+      `https://api.dreaded.site/api/ytdl/video?url=${encodeURIComponent(videoUrl)}`
+    ];
+
+    let downloadData;
+    for (const api of apis) {
+      downloadData = await getDownloadData(api);
+      if (downloadData && downloadData.success) break;
+    }
+
+    // Check if a valid download URL was found
+    if (!downloadData || !downloadData.success) {
+      return repondre('Failed to retrieve download URL from all sources. Please try again later.');
+    }
+
+    const downloadUrl = downloadData.result.download_url;
+    const videoDetails = downloadData.result;
+
+    // Prepare the message payload with external ad details
+    const messagePayloads = [
+      {
+        video: { url: downloadUrl },
+        mimetype: 'video/mp4',
+        contextInfo: {
+          externalAdReply: {
+            title: videoDetails.title,
+            body: videoDetails.title,
+            mediaType: 1,
+            sourceUrl: conf.GURL,
+            thumbnailUrl: firstVideo.thumbnail,
+            renderLargerThumbnail: false,
+            showAdAttribution: true,
+          },
+        },
+      },
+      {
+        document: { url: downloadUrl },
+        mimetype: 'video/mp4',
+        contextInfo: {
+          externalAdReply: {
+            title: videoDetails.title,
+            body: videoDetails.title,
+            mediaType: 1,
+            sourceUrl: conf.GURL,
+            thumbnailUrl: firstVideo.thumbnail,
+            renderLargerThumbnail: false,
+            showAdAttribution: true,
+          },
+        },
+      }
+    ];
+
+    // Send the download link to the user
+    for (const messagePayload of messagePayloads) {
+      await zk.sendMessage(dest, messagePayload, { quoted: ms });
+    }
 
   } catch (error) {
-    console.error('Error during download process:', error.message);
+    console.error('Error during download process:', error);
     return repondre(`Download failed due to an error: ${error.message || error}`);
   }
 });
