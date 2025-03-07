@@ -1,8 +1,8 @@
 const util = require('util');
 const fs = require('fs-extra');
 const axios = require('axios');
-const { adams } = require(__dirname + "/../bmb/md");
-const { format } = require(__dirname + "/../bmb/mesfonctions");
+const { adams } = require(__dirname + "/../Ibrahim/adams");
+const { format } = require(__dirname + "/../adams/mesfonctions");
 const os = require("os");
 const moment = require("moment-timezone");
 const s = require(__dirname + "/../config");
