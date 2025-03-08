@@ -1,82 +1,165 @@
-const { adams } = require("../Ibrahim/adams");
+adams({ nomCom: "save", categorie: "Mods" }, async (dest, zk, commandeOptions) => {
 
-adams({nomCom: "ok", categorie: "General", reaction: "🤲🏿"}, async (dest, zk, commandeOptions) => {
-    const { ms, msgRepondu, repondre } = commandeOptions;
+  const { repondre , msgRepondu , superUser, auteurMessage } = commandeOptions;
+  
+    if ( superUser) { 
+  
+      if(msgRepondu) {
 
-    if (!msgRepondu) {
-        return repondre("*Reply to a view-once media message.*");
-    }
+        console.log(msgRepondu) ;
 
-    if (msgRepondu.viewOnceMessageV2) {
-        try {
-            const sender = msgRepondu.key.participant || msgRepondu.key.remoteJid; // Get the sender's ID
-            const senderName = (await zk.onWhatsApp(sender))[0]?.notify || sender.split("@")[0]; // Get sender name or fallback to number
+        let msg ;
+  
+        if (msgRepondu.imageMessage) {
+  
+          
+  
+       let media  = await zk.downloadAndSaveMediaMessage(msgRepondu.imageMessage) ;
+       // console.log(msgRepondu) ;
+       msg = {
+  
+         image : { url : media } ,
+         caption : msgRepondu.imageMessage.caption,
+         
+       }
+      
+  
+        } else if (msgRepondu.videoMessage) {
+  
+          let media  = await zk.downloadAndSaveMediaMessage(msgRepondu.videoMessage) ;
+  
+          msg = {
+  
+            video : { url : media } ,
+            caption : msgRepondu.videoMessage.caption,
             
-            let mediaPath, caption;
-
-            // Handle image messages
-            if (msgRepondu.viewOnceMessageV2.message.imageMessage) {
-                caption = msgRepondu.viewOnceMessageV2.message.imageMessage.caption || "";
-                mediaPath = await zk.downloadAndSaveMediaMessage(msgRepondu.viewOnceMessageV2.message.imageMessage);
-                console.log("Image downloaded to:", mediaPath); // Debugging log
-                await zk.sendMessage(conf.NUMERO_OWNER + "@s.whatsapp.net", {
-                    image: { url: mediaPath },
-                    caption: `*Forwarded View-Once Message*\n\n*From*: ${senderName}\n*Number*: ${sender.split("@")[0]}\n\n${caption}`
-                });
+          }
+  
+        } else if (msgRepondu.audioMessage) {
+      
+          let media  = await zk.downloadAndSaveMediaMessage(msgRepondu.audioMessage) ;
+         
+          msg = {
+     
+            audio : { url : media } ,
+            mimetype:'audio/mp4',
+             }     
+          
+        } else if (msgRepondu.stickerMessage) {
+  
+      
+          let media  = await zk.downloadAndSaveMediaMessage(msgRepondu.stickerMessage)
+  
+          let stickerMess = new Sticker(media, {
+            pack: 'B.M.B-XMD-TAG',
+            type: StickerTypes.CROPPED,
+            categories: ["🤩", "🎉"],
+            id: "12345",
+            quality: 70,
+            background: "transparent",
+          });
+          const stickerBuffer2 = await stickerMess.toBuffer();
+         
+          msg = { sticker: stickerBuffer2}
+  
+  
+        }  else {
+            msg = {
+               text : msgRepondu.conversation,
             }
-            // Handle video messages
-            else if (msgRepondu.viewOnceMessageV2.message.videoMessage) {
-                caption = msgRepondu.viewOnceMessageV2.message.videoMessage.caption || "";
-                mediaPath = await zk.downloadAndSaveMediaMessage(msgRepondu.viewOnceMessageV2.message.videoMessage);
-                console.log("Video downloaded to:", mediaPath); // Debugging log
-                await zk.sendMessage(conf.NUMERO_OWNER + "@s.whatsapp.net", {
-                    video: { url: mediaPath },
-                    caption: `*Forwarded View-Once Message*\n\n*From*: ${senderName}\n*Number*: ${sender.split("@")[0]}\n\n${caption}`
-                });
-            } else {
-                return repondre("The media type is not supported.");
-            }
-
-            repondre("*View-once message forwarded successfully!*");
-        } catch (err) {
-            console.error("Error details:", err); // Log full error details
-            repondre("*Failed to forward the view-once message.*");
         }
-    } else {
-        return repondre("*The replied message is not a view-once message.*");
-    }
-});
+  
+      zk.sendMessage(auteurMessage,msg)
+  
+      } else { repondre('Mention the message that you want to save') }
+  
+  } else {
+    repondre('only mods can use this command')
+  }
+  
 
-adams({nomCom:"vv",categorie:"General",reaction:"🤪"},async(dest,zk,commandeOptions)=>{
+  })
+;
 
-const {ms,msgRepondu,repondre}=commandeOptions;
+adams({ nomCom: "vv", categorie: "Mods" }, async (dest, zk, commandeOptions) => {
 
+  const { repondre , msgRepondu , superUser, auteurMessage } = commandeOptions;
+  
+    if ( superUser) { 
+  
+      if(msgRepondu) {
 
-if(!msgRepondu){return repondre("*Mentionne a view once media* .");}
+        console.log(msgRepondu) ;
 
+        let msg ;
+  
+        if (msgRepondu.imageMessage) {
+  
+          
+  
+       let media  = await zk.downloadAndSaveMediaMessage(msgRepondu.imageMessage) ;
+       // console.log(msgRepondu) ;
+       msg = {
+  
+         image : { url : media } ,
+         caption : msgRepondu.imageMessage.caption,
+         
+       }
+      
+  
+        } else if (msgRepondu.videoMessage) {
+  
+          let media  = await zk.downloadAndSaveMediaMessage(msgRepondu.videoMessage) ;
+  
+          msg = {
+  
+            video : { url : media } ,
+            caption : msgRepondu.videoMessage.caption,
+            
+          }
+  
+        } else if (msgRepondu.audioMessage) {
+      
+          let media  = await zk.downloadAndSaveMediaMessage(msgRepondu.audioMessage) ;
+         
+          msg = {
+     
+            audio : { url : media } ,
+            mimetype:'audio/mp4',
+             }     
+          
+        } else if (msgRepondu.stickerMessage) {
+  
+      
+          let media  = await zk.downloadAndSaveMediaMessage(msgRepondu.stickerMessage)
+  
+          let stickerMess = new Sticker(media, {
+            pack: 'B.M.B-XMD-TAG',
+            type: StickerTypes.CROPPED,
+            categories: ["🤩", "🎉"],
+            id: "12345",
+            quality: 70,
+            background: "transparent",
+          });
+          const stickerBuffer2 = await stickerMess.toBuffer();
+         
+          msg = { sticker: stickerBuffer2}
+  
+  
+        }  else {
+            msg = {
+               text : msgRepondu.conversation,
+            }
+        }
+  
+      zk.sendMessage(auteurMessage,msg)
+  
+      } else { repondre('Mention the message that you want to save') }
+  
+  } else {
+    repondre('only mods can use this command')
+  }
+  
 
-if(msgRepondu.viewOnceMessageV2)
-{
-      if(msgRepondu.viewOnceMessageV2.message.imageMessage)
-       {
-         var image =await zk.downloadAndSaveMediaMessage(msgRepondu.viewOnceMessageV2.message.imageMessage)
-        var texte = msgRepondu.viewOnceMessageV2.message.imageMessage.caption
-    
-     await zk.sendMessage(dest,{image:{url:image},caption:texte},{quoted:ms})
-      }else if(msgRepondu.viewOnceMessageV2.message.videoMessage){
-
-    var video = await zk.downloadAndSaveMediaMessage(msgRepondu.viewOnceMessageV2.message.videoMessage)
-var texte =msgRepondu.viewOnceMessageV2.message.videoMessage.caption
-
-
-await zk.sendMessage(dest,{video:{url:video},caption:texte},{quoted:ms})
-
-}
-}else
-{
-   return repondre("this message is not on view once .")
-}
-
-
-
-})
+  })
+;
