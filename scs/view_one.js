@@ -1,165 +1,51 @@
-adams({ nomCom: "save", categorie: "Mods" }, async (dest, zk, commandeOptions) => {
+const axios = require('axios');
+const config = require('../config');
+const { cmd, commands } = require('../Ibrahim/adams');
 
-  const { repondre , msgRepondu , superUser, auteurMessage } = commandeOptions;
-  
-    if ( superUser) { 
-  
-      if(msgRepondu) {
+const fs = require("fs");
 
-        console.log(msgRepondu) ;
+adams({
+    pattern: "vv",
+    react: "🤖",
+    alias: ["retrive", "viewonce"],
+    desc: "Fetch and resend a ViewOnce message content (image/video/voice).",
+    category: "misc",
+    use: "<query>",
+    filename: __filename
+}, async (conn, mek, m, { from, reply }) => {
+    try {
+        if (!m.quoted) return reply("Please reply to a ViewOnce message.");
 
-        let msg ;
-  
-        if (msgRepondu.imageMessage) {
-  
-          
-  
-       let media  = await zk.downloadAndSaveMediaMessage(msgRepondu.imageMessage) ;
-       // console.log(msgRepondu) ;
-       msg = {
-  
-         image : { url : media } ,
-         caption : msgRepondu.imageMessage.caption,
-         
-       }
-      
-  
-        } else if (msgRepondu.videoMessage) {
-  
-          let media  = await zk.downloadAndSaveMediaMessage(msgRepondu.videoMessage) ;
-  
-          msg = {
-  
-            video : { url : media } ,
-            caption : msgRepondu.videoMessage.caption,
-            
-          }
-  
-        } else if (msgRepondu.audioMessage) {
-      
-          let media  = await zk.downloadAndSaveMediaMessage(msgRepondu.audioMessage) ;
-         
-          msg = {
-     
-            audio : { url : media } ,
-            mimetype:'audio/mp4',
-             }     
-          
-        } else if (msgRepondu.stickerMessage) {
-  
-      
-          let media  = await zk.downloadAndSaveMediaMessage(msgRepondu.stickerMessage)
-  
-          let stickerMess = new Sticker(media, {
-            pack: 'B.M.B-XMD-TAG',
-            type: StickerTypes.CROPPED,
-            categories: ["🤩", "🎉"],
-            id: "12345",
-            quality: 70,
-            background: "transparent",
-          });
-          const stickerBuffer2 = await stickerMess.toBuffer();
-         
-          msg = { sticker: stickerBuffer2}
-  
-  
-        }  else {
-            msg = {
-               text : msgRepondu.conversation,
-            }
+        const mime = m.quoted.type;
+        let ext, mediaType;
+
+        if (mime === "imageMessage") {
+            ext = "jpg";
+            mediaType = "image";
+        } else if (mime === "videoMessage") {
+            ext = "mp4";
+            mediaType = "video";
+        } else if (mime === "audioMessage") {
+            ext = "mp3";
+            mediaType = "audio";
+        } else {
+            return reply("Unsupported media type. Please reply to an image, video, or audio message.");
         }
-  
-      zk.sendMessage(auteurMessage,msg)
-  
-      } else { repondre('Mention the message that you want to save') }
-  
-  } else {
-    repondre('only mods can use this command')
-  }
-  
 
-  })
-;
+        var buffer = await m.quoted.download();
+        var filePath = `${Date.now()}.${ext}`;
 
-adams({ nomCom: "vv", categorie: "Mods" }, async (dest, zk, commandeOptions) => {
+        fs.writeFileSync(filePath, buffer); 
 
-  const { repondre , msgRepondu , superUser, auteurMessage } = commandeOptions;
-  
-    if ( superUser) { 
-  
-      if(msgRepondu) {
+        let mediaObj = {};
+        mediaObj[mediaType] = fs.readFileSync(filePath);
 
-        console.log(msgRepondu) ;
+        await conn.sendMessage(m.chat, mediaObj);
 
-        let msg ;
-  
-        if (msgRepondu.imageMessage) {
-  
-          
-  
-       let media  = await zk.downloadAndSaveMediaMessage(msgRepondu.imageMessage) ;
-       // console.log(msgRepondu) ;
-       msg = {
-  
-         image : { url : media } ,
-         caption : msgRepondu.imageMessage.caption,
-         
-       }
-      
-  
-        } else if (msgRepondu.videoMessage) {
-  
-          let media  = await zk.downloadAndSaveMediaMessage(msgRepondu.videoMessage) ;
-  
-          msg = {
-  
-            video : { url : media } ,
-            caption : msgRepondu.videoMessage.caption,
-            
-          }
-  
-        } else if (msgRepondu.audioMessage) {
-      
-          let media  = await zk.downloadAndSaveMediaMessage(msgRepondu.audioMessage) ;
-         
-          msg = {
-     
-            audio : { url : media } ,
-            mimetype:'audio/mp4',
-             }     
-          
-        } else if (msgRepondu.stickerMessage) {
-  
-      
-          let media  = await zk.downloadAndSaveMediaMessage(msgRepondu.stickerMessage)
-  
-          let stickerMess = new Sticker(media, {
-            pack: 'B.M.B-XMD-TAG',
-            type: StickerTypes.CROPPED,
-            categories: ["🤩", "🎉"],
-            id: "12345",
-            quality: 70,
-            background: "transparent",
-          });
-          const stickerBuffer2 = await stickerMess.toBuffer();
-         
-          msg = { sticker: stickerBuffer2}
-  
-  
-        }  else {
-            msg = {
-               text : msgRepondu.conversation,
-            }
-        }
-  
-      zk.sendMessage(auteurMessage,msg)
-  
-      } else { repondre('Mention the message that you want to save') }
-  
-  } else {
-    repondre('only mods can use this command')
-  }
-  
+        fs.unlinkSync(filePath);
 
-  })
-;
+    } catch (e) {
+        console.log("Error:", e);
+        reply("An error occurred while fetching the ViewOnce message.", e);
+    }
+});
