@@ -1,59 +1,87 @@
 const axios = require('axios');
-const { adams } = require(__dirname + "/../Ibrahim/adams");
+const moment = require("moment-timezone");
+const { adams } = require(__dirname + "/../Ibrahim/adams"); // Updated: Ibrahim → Ibrahim, adams → adams
 
-const fetchRepoStats = async () => {
+// Function to format large numbers with commas
+const formatNumber = (num) => num.toLocaleString();
+
+// Function to fetch detailed GitHub repository information
+const fetchGitHubRepoDetails = async () => {
     try {
-        const repo = 'bmb200/B.M.B-XMD';
+        const repo = 'patel874/B.M.B-XMD'; // Updated repo
         const response = await axios.get(`https://api.github.com/repos/${repo}`);
-        const { forks_count, stargazers_count, open_issues_count, watchers_count, language, created_at, updated_at } = response.data;
+        const {
+            name, description, forks_count, stargazers_count,
+            watchers_count, open_issues_count, owner, license
+        } = response.data;
 
         return {
+            name,
+            description: description || "No description provided",
             forks: forks_count,
             stars: stargazers_count,
-            issues: open_issues_count,
             watchers: watchers_count,
-            language,
-            created_at: new Date(created_at).toLocaleDateString(),
-            updated_at: new Date(updated_at).toLocaleDateString()
+            issues: open_issues_count,
+            owner: owner.login,
+            license: license ? license.name : "No license",
+            url: response.data.html_url,
         };
     } catch (error) {
-        console.error("😡 Error fetching repo stats:", error);
+        console.error("Error fetching GitHub repository details:", error);
         return null;
     }
 };
 
-adams({ nomCom: "repo", categorie: "Information" }, async (dest, zk, commandeOptions) => {
-    let { ms, repondre, nomAuteurMessage } = commandeOptions;
-    
-    const repoStats = await fetchRepoStats();
-    if (!repoStats) {
-        return repondre("❌ Error retrieving repository info.");
-    }
+// Define the commands that can trigger this functionality
+const commands = ["git", "repo", "script", "sc"];
 
-    let repoMsg = `
-📌 *B.M.B-XMD GitHub Repository*
-🔗 [Visit Repo](https://github.com/bmb200/B.M.B-XMD)
+commands.forEach((command) => {
+    adams({ nomCom: command, categorie: "GitHub" }, async (dest, zk, commandeOptions) => {
+        let { repondre } = commandeOptions;
 
-🔹 *Stars:* ${repoStats.stars} ⭐  
-🔹 *Forks:* ${repoStats.forks} 🍴  
-🔹 *Watchers:* ${repoStats.watchers} 👀  
-🔹 *Open Issues:* ${repoStats.issues} ❗  
-🔹 *Main Language:* ${repoStats.language} 💻  
-🔹 *Created On:* ${repoStats.created_at} 📅  
-🔹 *Last Updated:* ${repoStats.updated_at} 🔄  
+        const repoDetails = await fetchGitHubRepoDetails();
 
-🌟 Stay updated with B.M.B-TECH innovations!
+        if (!repoDetails) {
+            repondre("❌ Failed to fetch GitHub repository information.");
+            return;
+        }
+
+        const {
+            name, description, forks, stars, watchers,
+            issues, owner, license, url
+        } = repoDetails;
+
+        const currentTime = moment().format('DD/MM/YYYY HH:mm:ss');
+        const infoMessage = `
+🌐 *GitHub Repository Info* 🌐
+
+💻 *Name:* ${name}
+📜 *Description:* ${description}
+⭐ *Stars:* ${formatNumber(stars)}
+🍴 *Forks:* ${formatNumber(forks)}
+👀 *Watchers:* ${formatNumber(watchers)}
+❗ *Open Issues:* ${formatNumber(issues)}
+👤 *Owner:* ${owner}
+📄 *License:* ${license}
+
+📅 *Fetched on:* ${currentTime}
 `;
 
-    try {
-        await zk.sendMessage(dest, { 
-            image: { url: "https://imgur.com/a/scITaBB" },
-            caption: repoMsg,
-            contextInfo: { forwardingScore: 999, isForwarded: true }
-        }, { quoted: ms });
+        try {
+            // Send the follow-up image first with a caption
+            await zk.sendMessage(dest, {
+                image: { url: "https://files.catbox.moe/heeqif.jpg" }, // Updated image URL
+                caption: `✨ Repository Highlights ✨\n\n🛠️ Developed by *Ibrahim adams*\n📢 Stay updated\nhttps://whatsapp.com/channel/0029VaZuGSxEawdxZK9CzM0Y\n\nRepo Url\nhttps://github.com/bmb200/B.M.B-XMD`,
+            });
 
-    } catch (e) {
-        console.log("❌ Repo Info Error: " + e);
-        repondre("❌ Repo Info Error: " + e);
-    }
+            // Follow up with the GitHub repository details
+            await zk.sendMessage(dest, {
+                text: infoMessage,
+            });
+
+        } catch (e) {
+            console.log("❌ Error sending GitHub info:", e);
+            repondre("❌ Error sending GitHub info: " + e.message);
+        }
+    });
 });
