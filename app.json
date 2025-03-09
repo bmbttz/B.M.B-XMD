@@ -2,8 +2,8 @@
 
 
 {
-  "name":"BWM-XMD",
-  "description":"Best whatsapp bot developed by Ibrahim adams",
+  "name":"𝙱.𝙼.𝙱-𝚇𝙼𝙳",
+  "description":"Best whatsapp bot developed by 𝙱.𝙼.𝙱-𝚇𝙼𝙳",
   "keywords":["bot","node","baileys","whatsapp"],
   "logo":"https://files.catbox.moe/h2ydge.jpg",
   "repository":"https://github.com/ekitale/maths-project",
@@ -98,7 +98,7 @@
     "BOT_NAME" : {
        
       "description":"put A name for your bot",
-      "value":"BWM-XMD",
+      "value":"𝙱.𝙼.𝙱-𝚇𝙼𝙳",
       "required":false
 
     } ,
@@ -129,7 +129,7 @@
     {
       
     "description":"Enter here the number that is hosting the bot Eg, 254xxxxxxx",   
-      "value":"",
+      "value":"255....",
     "required":true
       
     },
@@ -138,7 +138,7 @@
     
     "desc": "Owner name",
     "required": false,
-    "value": "𝐈𝐛𝐫𝐚𝐡𝐢𝐦 𝐀𝐝𝐚𝐦𝐬"
+    "value": "𝙱.𝙼.𝙱-𝚇𝙼𝙳"
   },
     "SESSION_ID":{
     "description":"put your session ID , the code you received from from ibrahim adams site",   
