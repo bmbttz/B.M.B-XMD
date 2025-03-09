@@ -118,7 +118,7 @@
 	,
     "HEROKU_API_KEY": {
     "description": "Insert your heroku api-key copy it from your heroku account settings",
-     "required" :HRKU-b469c913-4cc8-46d3-a678-ff0baf60dc01,
+     "required" :true
     },
   "HEROKU_APP_NAME": {
     "description": "Insert your heroku APP NAME enter same as the app name exactly, the fast name up there ",
