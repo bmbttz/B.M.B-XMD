@@ -1,10 +1,12 @@
 
+
+
 {
-  "name":"𝙱.𝙼.𝙱 𝚇𝙼𝙳",
-  "description":"Best whatsapp bot developed by 𝙱𝙼𝙱 𝚇𝙼𝙳",
+  "name":"BWM-XMD",
+  "description":"Best whatsapp bot developed by Ibrahim adams",
   "keywords":["bot","node","baileys","whatsapp"],
-  "logo":"https://files.catbox.moe/i89539.jpg",
-  "repository":"https://github.com/bmb200/B.M.B-XMD.git",
+  "logo":"https://files.catbox.moe/h2ydge.jpg",
+  "repository":"https://github.com/ekitale/maths-project",
   "succes_url":"/",
   "stack":"heroku-24",
   "env":{
@@ -20,15 +22,51 @@
       "value":"no",
       "required":false
     },
+"ANTILINK_GROUP":
+    {
+      "description":"Enter yes for your bot to auto delete links and remove link senders",
+      "value":"no",
+      "required":false
+    },
+"MENUTYPE":
+    {
+      "description":"Enter 1 for small thumbnail menu, Enter 2 for big thumbnail menu, leave blank and they will be displaying randomly big or Small ",
+      "value":"",
+      "required":false
+    },
+"AUDIO_CHATBOT":
+    {
+      "description":"Enter yes for your bot to audio chat to messages when offline ",
+      "value":"no",
+      "required":false
+    },
+"AUTO_SAVE_CONTACTS":
+    {
+      "description":"Enter yes for your bot to auto save numbers",
+      "value":"no",
+      "required":false
+    },
+"AUTO_REACT_STATUS":
+    {
+      "description":"Enter yes for your bot to auto react status",
+      "value":"yes",
+      "required":false
+    },
 "ANTICALL":
     {
       "description":"Enter yes for your bot to auto reject calls",
       "value":"no",
       "required":false
     },
+"CHATBOT":
+    {
+      "description":"Enter yes for your bot to auto reply message when offline",
+      "value":"no",
+      "required":false
+    },
 "AUTO_BIO":
     {
-      "description":"Enter yes for your bot to auto bio",
+      "description":"Enter yes for your bot to auto bio or no to decline",
       "value":"yes",
       "required":false
     },
@@ -60,14 +98,14 @@
     "BOT_NAME" : {
        
       "description":"put A name for your bot",
-      "value":"𝙱.𝙼.𝙱 𝚇𝙼𝙳",
+      "value":"BWM-XMD",
       "required":false
 
     } ,
      "BOT_MENU_LINKS" : {
     
       "description":"add one or many link for your bot menu  ; eg : url1,url2,url3.....",
-      "value":"https://files.catbox.moe/n4vmt4.jpg",
+      "value":"https://files.catbox.moe/h2ydge.jpg",
       "required":false
        
      },
@@ -79,22 +117,20 @@
     }
 	,
     "HEROKU_API_KEY": {
-    "description": "insert your heroku api-key (this is optionnal)",
-	    "value":"HRKU-c179b3c5-bd5c-457f-8311-b9ab0a5d4fcc",
-     "required" :false
+    "description": "Insert your heroku api-key copy it from your heroku account settings",
+     "required" :true 
     },
   "HEROKU_APP_NAME": {
-    "description": "insert your heroku APP NAME (this is optionnal)",
-	  
-     "required" :false
+    "description": "Insert your heroku APP NAME enter same as the app name exactly, the fast name up there ",
+     "required" :true 
     }  
 	  ,
     "NUMERO_OWNER":
     {
       
-    "description":"Owner Number",   
-      "value":"255772341432",
-    "required":false
+    "description":"Enter here the number that is hosting the bot Eg, 254xxxxxxx",   
+      "value":"",
+    "required":true
       
     },
     "OWNER_NAME":
@@ -102,10 +138,10 @@
     
     "desc": "Owner name",
     "required": false,
-    "value": "𝙱.𝙼.𝙱 𝚇𝙼𝙳"
+    "value": "𝐈𝐛𝐫𝐚𝐡𝐢𝐦 𝐀𝐝𝐚𝐦𝐬"
   },
     "SESSION_ID":{
-    "description":"put your session ID , the code you received from from 𝙱.𝙼.𝙱 𝚇𝙼𝙳 site",   
+    "description":"put your session ID , the code you received from from ibrahim adams site",   
       "value":"",
      "required":true
   },
@@ -126,8 +162,8 @@
     "value":"",
     "required": false
   },
-  "ANTI_DELETE_MESSAGE" : {
-    "description": "if you want to enable anti delete message put yes else put no",
+  "ANTIDELETE_MESSAGES" : {
+    "description": "Deleted messages will be sent to your inbox, enter yes to enable else put no",
     "value": "yes",
         "required": false
   }
