@@ -39,7 +39,7 @@ module.exports = {
     AUTO_REJECT_CALL: process.env.AUTO_REJECT_CALL || 'yes',
     AUTO_BIO: process.env.AUTO_BIO || 'yes',
     ANTILINK_GROUP: process.env.ANTILINK_GROUP || 'yes',
-    AUDIO_REPLY: process.env.AUDIO_REPLY || 'yes',
+    AUDIO_REPLY: process.env.AUDIO_REPLY || 'no',
     AUTO_SAVE_CONTACTS_NAME: "💥 𝙱𝙼𝙱 𝚇𝙼𝙳", // Default name prefix for new contacts
     AUTO_REPLY_MESSAGE: "", 
     DATABASE_URL,
