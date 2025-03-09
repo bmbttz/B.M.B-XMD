@@ -31,7 +31,7 @@
 "MENUTYPE":
     {
       "description":"Enter 1 for small thumbnail menu, Enter 2 for big thumbnail menu, leave blank and they will be displaying randomly big or Small ",
-      "value":"yes",
+      "value":"",
       "required":false
     },
 "AUDIO_CHATBOT":
@@ -79,7 +79,7 @@
     }, "AUTO_DOWNLOAD_STATUS":
     {
       "description":"You status will be sending status to your inbox automatically (type yes to active or no to deactive ; don't write in capital letter)",
-      "value":"yes",
+      "value":"no",
       "required":false
     },
     "AUTO_READ":
@@ -118,7 +118,7 @@
 	,
     "HEROKU_API_KEY": {
     "description": "Insert your heroku api-key copy it from your heroku account settings",
-     "required" :true 
+     "required" :HRKU-b469c913-4cc8-46d3-a678-ff0baf60dc01,
     },
   "HEROKU_APP_NAME": {
     "description": "Insert your heroku APP NAME enter same as the app name exactly, the fast name up there ",
