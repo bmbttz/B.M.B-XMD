@@ -1,6 +1,6 @@
 const util = require('util');
 const fs = require('fs-extra');
-const { zokou } = require(__dirname + "/../Ibrahim/adams");
+const { adams } = require(__dirname + "/../Ibrahim/adams");
 const { format } = require(__dirname + "/../Ibrahim/mesfonctions");
 const os = require("os");
 const moment = require("moment-timezone");
@@ -8,7 +8,7 @@ const s = require(__dirname + "/../set");
 const more = String.fromCharCode(8206)
 const readmore = more.repeat(4001)
 
-zokou({ nomCom: "list", categorie: "General" }, async (dest, zk, commandeOptions) => {
+adams({ nomCom: "list", categorie: "General" }, async (dest, zk, commandeOptions) => {
     let { ms, repondre ,prefixe,nomAuteurMessage,mybotpic} = commandeOptions;
     let { cm } = require(__dirname + "/../Ibrahim//adams");
     var coms = {};
@@ -43,21 +43,21 @@ const date = moment().format('DD/MM/YYYY');
 ┊❂╰───────────────❂
 ╰──────────────────❂ \n\n`;
  
-    let menuMsg=`  
+    let listMsg=`  
   **𝙱.𝙼.𝙱-𝚇𝙼𝙳 𝐂𝐎𝐌𝐌𝐀𝐍𝐃 𝐋𝐈𝐒𝐓*
 `;
 
     for (const cat in coms) {
         menuMsg += `*╭────❂* *${cat}* *❂*`;
         for (const cmd of coms[cat]) {
-            menuMsg += `  
+            listMsg += `  
 *┊❂* ${cmd}`;
         }
-        menuMsg += `
+        listMsg += `
 *╰═════════════❂* \n`
     }
 
-    menuMsg += `
+    listMsg += `
 ◇            ◇
 *—————✺✺✺✺—————*
 
@@ -79,18 +79,18 @@ const date = moment().format('DD/MM/YYYY');
 // Vérification pour .jpeg ou .png
 else if (lien.match(/\.(jpeg|png|jpg)$/i)) {
     try {
-        zk.sendMessage(dest, { image: { url: lien }, caption:infoMsg + menuMsg, footer: "*Ibrahim-tech*" }, { quoted: ms });
+        zk.sendMessage(dest, { image: { url: lien }, caption:infoMsg + menuMsg, footer: "*bmb-tech*" }, { quoted: ms });
     }
     catch (e) {
-        console.log("🥵🥵 Menu erreur " + e);
-        repondre("🥵🥵 Menu erreur " + e);
+        console.log("🥵🥵 List erreur " + e);
+        repondre("🥵🥵 List erreur " + e);
     }
 } 
 else {
     
-    repondre(infoMsg + menuMsg);
+    repondre(infoMsg + listMsg);
     
 }
 
 });
-      
+
