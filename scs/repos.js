@@ -70,8 +70,8 @@ commands.forEach((command) => {
         try {
             // Send the follow-up image first with a caption
             await zk.sendMessage(dest, {
-                image: { url: "https://files.catbox.moe/pibkby.jpg" }, // Updated image URL
-                caption: `✨ Repository Highlights ✨\n\n🛠️ Developed by *framework zokou*\n📢 Stay updated\nhttps://whatsapp.com/channel/0029VaZuGSxEawdxZK9CzM0Y\n\nRepo Url\nhttps://github.com/patel874/KHAN_PATEL-MD`,
+                image: { url: "https://files.catbox.moe/xwpu18.png" }, // Updated image URL
+                caption: `✨ Repository Highlights ✨\n\n🛠️ Developed by *framework zokou*\n📢 Stay updated\nhttps://whatsapp.com/channel/0029VawO6hgF6sn7k3SuVU3z\n\nRepo Url\nhttps://github.com/bmb200/B.M.B-XMD`,
             });
 
             // Follow up with the GitHub repository details
