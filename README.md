@@ -13,13 +13,12 @@
 
   </h1> 
 <p align="center">l introduce <b>𝙱.𝙼.𝙱-𝚃𝙴𝙲𝙷</b>, a powerful simple WhatsApp bot </p>
-
 </p>
-  <p align="center">
-<a href="https://github.com/bmb200?tab=followers"><img title="Followers" src="https://img.shields.io/github/followers/bmb200?label=Followers&style=social"></a>
-<a href="https://github.com/bmb200/𝙱.𝙼.𝙱-𝚇𝙼𝙳/stargazers/"><img title="STARS" src="https://img.shields.io/github/stars/bmb200/𝙱.𝙼.𝙱-𝚃𝙴𝙲𝙷?&style=social"></a>
-<a href="https://github.com/bmb200/𝙱.𝙼.𝙱-𝚇𝙼𝙳/network/members"><img title="Forks" src="https://github.com/bmb200/B.M.B-XMD/fork/bmb200/𝙱.𝙼.𝙱-𝚇𝙼𝙳?style=social"></a>
-<a href="https://github.com/bmb200"><img title="Watching" src="https://img.shields.io/github/watchers/zedkazzozoranda091/leonard-md?label=Watching&style=social"></a>
+<p align="center">
+<a href="https://github.com/bmb200"><img title="Followers" src="https://img.shields.io/github/followers/link?label=Followers&style=social"></a>
+<a href="https://github.com/bmb200/B.M.B-XMD/stargazers"><img title="STARS" src="https://img.shields.io/github/stars/link?&style=social"></a>
+<a href="https://github.com/bmb200/B.M.B-XMD/fork"><img title="Forks" src="https://img.shields.io/github/forks/link?style=social"></a>
+<a href="https://github.com/bmb200/B.M.B-XMD/watchers"><img title="Watching" src="https://img.shields.io/github/watchers/link?label=Watching&style=social"></a>
 
 </p>
 <p align="center"><img src="https://profile-counter.glitch.me/{bmb200}/count.svg" alt="𝙱.𝙼.𝙱-𝚇𝙼𝙳 :: Visitor's Count"/></p>
