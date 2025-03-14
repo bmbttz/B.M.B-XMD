@@ -48,7 +48,7 @@
  <img src="https://img.shields.io/badge/Create%20Account%20Now-darkblue?style=for-the-badge&logo=heroku" width="220" height="38.45"/></a></p>
   </a></p>
 - <a href="https://bmb-verification.vercel.app/bmb"><img title="Tap Here Open deploy Site" src="https://img.shields.io/badge/DEPLOY TO HEROKU-h?color=green&style=for-the-badge&logo=msi" width="220" height="38.45"/></a></p>
-[![Deploy to Heroku](https://img.shields.io/static/v1?label=Deploy%20to&message=Heroku&color=430098&style=for-the-badge&logo=heroku&logoColor=white)](https://bmb-verification.vercel.app/bmb)  
+
 
    ###
 
