@@ -98,7 +98,7 @@ AUTO_REACT_MESSAGE=no
   </tr>
   <tr>
     <td><a href="https://wa.me/255772341432?"><img src="https://files.catbox.moe/4fqgva.jpg" width="180"</td>
-    <td><a href="https://whatsapp.com/channel/0029Vb2eknR59PwL1OK4wR24"><img src="https://files.catbox.moe/56mfqe.jpg" width="180"</td>
+    <td><a href="https://whatsapp.com/channel/0029Vb2eknR59PwL1OK4wR24"><img src="https://files.catbox.moe/xwpu18.png" width="180"</td>
   </tr>
 </table>
 
@@ -109,7 +109,7 @@ AUTO_REACT_MESSAGE=no
 
 
 <table>
-    <td><a href="https://chat.whatsapp.com/Jbp0o4EQtv080SYoyE2Mqi?"><img src="https://files.catbox.moe/0b3rxj.jpg" width="180"</td>
+    <td><a href="https://chat.whatsapp.com/Jbp0o4EQtv080SYoyE2Mqi?"><img src="https://files.catbox.moe/iab57p.png" width="180"</td>
     <td><a href="[https://whatsapp.com/channel/0029Vb2eknR59PwL1OK4wR24](https://whatsapp.com/channel/0029VaoadqE84OmC8xlVsQ1M)"><img src="https://files.catbox.moe/a1krzj.png" width="180"</td>
   </tr>
 </table>
