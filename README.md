@@ -110,7 +110,7 @@ AUTO_REACT_MESSAGE=no
 
 <table>
     <td><a href="https://chat.whatsapp.com/Jbp0o4EQtv080SYoyE2Mqi?"><img src="https://files.catbox.moe/0b3rxj.jpg" width="180"</td>
-    <td><a href="[https://whatsapp.com/channel/0029Vb2eknR59PwL1OK4wR24](https://whatsapp.com/channel/0029VaoadqE84OmC8xlVsQ1M)"><img src="https://files.catbox.moe/ffk61d.jpg" width="180"</td>
+    <td><a href="[https://whatsapp.com/channel/0029Vb2eknR59PwL1OK4wR24](https://whatsapp.com/channel/0029VaoadqE84OmC8xlVsQ1M)"><img src="https://files.catbox.moe/a1krzj.png" width="180"</td>
   </tr>
 </table>
 
