@@ -65,29 +65,6 @@ CONTACT DEVELOPER ON WHATSAPP
     
 [![JOIN WHATSAPP CHANNEL](https://raw.githubusercontent.com/Neeraj-x0/Neeraj-x0/main/photos/suddidina-join-whatsapp.png)](https://chat.whatsapp.com/Jbp0o4EQtv080SYoyE2Mqi)
 
-```env
-PREFIX=.
-AUTO_READ_STATUS=yes
-AUTO_DOWNLOAD_STATUS=yes
-PM_PERMIT=no
-BOT_NAME=𝙱.𝙼.𝙱-𝚇𝙼𝙳
-BOT_MENU_LINKS=https://files.catbox.moe/ytcgqj.jpg
-PUBLIC_MODE=yes
-HEROKU=no
-OWNER_NAME=𝙱.𝙼.𝙱-𝚇𝙼𝙳
-NUMERO_OWNER=255741752020
-WARN_COUNT=3
-STARTING_BOT_MESSAGE=yes
-PRESENCE=1
-PM_CHATBOT=no
-SESSION_ID=your session id
-ANTI_VIEW_ONCE="yes
-ANTI_COMMAND_SPAM=yes
-ANTI_DELETE_MESSAGE=yes
-AUTO_REACT_MESSAGE=no
-```
-
-
 
 *gallery*
 
