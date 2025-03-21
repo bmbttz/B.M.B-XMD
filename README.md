@@ -60,7 +60,7 @@ CONTACT DEVELOPER ON WHATSAPP
 
   
  
-<a href="https://whatsapp.com/channel/0029Vb2eknR59PwL1OK4wR24" target="_blank">
+<a href="https://whatsapp.com/channel/0029VawO6hgF6sn7k3SuVU3z" target="_blank">
     <img alt="whatsapp Group" src="https://img.shields.io/badge/ 𝙱.𝙼.𝙱-𝚇𝙼𝙳  CHANNEL -25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
 
 *gallery*
@@ -72,7 +72,7 @@ CONTACT DEVELOPER ON WHATSAPP
   </tr>
   <tr>
     <td><a href="https://wa.me/255772341432?"><img src="https://files.catbox.moe/4fqgva.jpg" width="180"</td>
-    <td><a href="https://whatsapp.com/channel/0029Vb2eknR59PwL1OK4wR24"><img src="https://files.catbox.moe/xwpu18.png" width="180"</td>
+    <td><a href="https://whatsapp.com/channel/0029VawO6hgF6sn7k3SuVU3z"><img src="https://files.catbox.moe/xwpu18.png" width="180"</td>
   </tr>
 </table>
 
@@ -84,7 +84,7 @@ CONTACT DEVELOPER ON WHATSAPP
 
 <table>
     <td><a href="https://chat.whatsapp.com/Jbp0o4EQtv080SYoyE2Mqi?"><img src="https://files.catbox.moe/iab57p.png" width="180"</td>
-    <td><a href="[https://whatsapp.com/channel/0029Vb2eknR59PwL1OK4wR24](https://whatsapp.com/channel/0029VaoadqE84OmC8xlVsQ1M)"><img src="https://files.catbox.moe/a1krzj.png" width="180"</td>
+    <td><a href="[https://whatsapp.com/channel/0029VawO6hgF6sn7k3SuVU3z](https://whatsapp.com/channel/0029VawO6hgF6sn7k3SuVU3z)"><img src="https://files.catbox.moe/a1krzj.png" width="180"</td>
   </tr>
 </table>
 
