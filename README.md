@@ -64,13 +64,6 @@ CONTACT DEVELOPER ON WHATSAPP
 <a href="https://whatsapp.com/channel/0029VawO6hgF6sn7k3SuVU3z" target="_blank">
     <img alt="whatsapp Group" src="https://img.shields.io/badge/ 𝙱.𝙼.𝙱-𝚇𝙼𝙳  CHANNEL -25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
 
-# 𝙱.𝙼.𝙱-𝚇𝙼𝙳 𝚂𝚄𝙿𝙿𝙾𝚁𝚃 𝚂𝙾𝙲𝙸𝙰𝙻 𝙼𝙴𝙳𝙸𝙰
-  
-<a href="https://wa.link/gk0ie1"> <img src="https://raw.githubusercontent.com/shizothetechie/database/main/icon/WhatsApp.png" width="13%"> </a>
-  <a href="https://whatsapp.com/channel/0029VawO6hgF6sn7k3SuVU3z"> <img src="https://raw.githubusercontent.com/shizothetechie/database/main/icon/WhatsApp.png" width="13%"> </a>
-  <a href="https://www.instagram.com/bmb.md11?igsh=cnBqcjVrY3c3eDl3"> <img src="https://raw.githubusercontent.com/shizothetechie/database/main/icon/Instagram2.png" width="14%"> </a>
-  <a href="https://www.facebook.com/share/16F9sbGaXC/"> <img src="https://raw.githubusercontent.com/shizothetechie/database/main/icon/Facebook.png" width="15%"> </a><a href="https://github.com/bmb200/B.M.B-XMD"> <img src="https://raw.githubusercontent.com/shizothetechie/database/main/icon/devto.png" width="15%"> </a><a href="https://x.com/bmb_xmd?t=dXGMsWLaBasPJ3PZykz8LA&s=09 "> <img src="https://raw.githubusercontent.com/shizothetechie/database/main/icon/twitter.png" width="13%"> </a>
-</p>
 
 *gallery*
 
