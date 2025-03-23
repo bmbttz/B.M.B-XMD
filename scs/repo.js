@@ -5,7 +5,7 @@ adams({ nomCom: "repo", categorie: "General" }, async (dest, zk, commandeOptions
     let { ms, repondre } = commandeOptions;    
 
     const repoUrl = "https://api.github.com/repos/bmb200/B.M.B-XMD";    
-    const imageUrl = "https://files.catbox.moe/6am24p.jpg";    
+    const imageUrl = "https://files.catbox.moe/cwda81.jpg";    
 
     try {    
         const response = await axios.get(repoUrl);    
