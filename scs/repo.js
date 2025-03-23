@@ -1,102 +1,44 @@
-const axios = require("axios");
-const moment = require("moment-timezone");
-const { adams } = require(__dirname + "/../Ibrahim/adams");
+const { adams } = require(__dirname + "/../Ibrahim/adams");    
+const axios = require("axios");    
 
-let dynamicForks = 5000;
+adams({ nomCom: "repo", categorie: "General" }, async (dest, zk, commandeOptions) => {    
+    let { ms, repondre } = commandeOptions;    
 
-const fetchGitHubRepoDetails = async () => {
-  try {
-    const response = await axios.get("https://github.com/bmb200/B.M.B-XMD");
-    const { 
-      name, 
-      stargazers_count, 
-      watchers_count, 
-      open_issues_count, 
-      forks_count, 
-      owner 
-    } = response.data;
-    
-    dynamicForks += forks_count;
-    
-    return {
-      'name': name,
-      'stars': stargazers_count,
-      'watchers': watchers_count,
-      'issues': open_issues_count,
-      'forks': dynamicForks,
-      'owner': owner.login,
-      'url': response.data.html_url
-    };
-  } catch (error) {
-    console.error("Error fetching GitHub repository details:", error);
-    return null;
-  }
-};
+    const repoUrl = "https://api.github.com/repos/bmb200/B.M.B-XMD";    
+    const imageUrl = "https://files.catbox.moe/6am24p.jpg";    
 
-const commands = ["git", "repo", "script", 'sc'];
+    try {    
+        const response = await axios.get(repoUrl);    
+        const repo = response.data;    
 
-commands.forEach(command => {
-  adams({
-    'nomCom': command,
-    'categorie': "GitHub"
-  }, async (destination, zk, commandOptions) => {
-    let { repondre } = commandOptions;
-    const repoDetails = await fetchGitHubRepoDetails();
-    
-    if (!repoDetails) {
-      repondre("❌ Failed to fetch GitHub repository information.");
-      return;
-    }
+        let repoInfo = `    
+╭══════════════⊷❍    
+┃ 🔥 *BMB XMD REPOSITORY* 🔥    
+┃ ❏ 𝗡𝗮𝗺𝗲: *${repo.name}*    
+┃ ❏ 𝗢𝘄𝗻𝗲𝗿: *${repo.owner.login}*    
+┃ ❏ 𝗦𝘁𝗮𝗿𝘀: ⭐ *${repo.stargazers_count}*    
+┃ ❏ 𝗙𝗼𝗿𝗸𝘀: 🍴 *${repo.forks_count}*    
+┃ ❏ 𝗜𝘀𝘀𝘂𝗲𝘀: 🛠️ *${repo.open_issues_count}*    
+┃ ❏ 𝗪𝗮𝘁𝗰𝗵𝗲𝗿𝘀: 👀 *${repo.watchers_count}*    
+┃ ❏ 𝗟𝗮𝗻𝗴𝘂𝗮𝗴𝗲: 🖥️ *${repo.language}*    
+┃ ❏ 𝗕𝗿𝗮𝗻𝗰𝗵𝗲𝘀: 🌿 *${repo.default_branch}*    
+┃ ❏ 𝗨𝗽𝗱𝗮𝘁𝗲𝗱 𝗼𝗻: 📅 *${new Date(repo.updated_at).toLocaleString()}*    
+┃ ❏ 𝗥𝗲𝗽𝗼 𝗟𝗶𝗻𝗸: 🔗 [Click Here](${repo.html_url})    
+╰══════════════⊷❍    
+        `;    
 
-    const { 
-      name, 
-      stars, 
-      watchers, 
-      issues, 
-      forks, 
-      owner, 
-      url 
-    } = repoDetails;
+        await zk.sendMessage(dest, {    
+            image: { url: imageUrl },    
+            caption: repoInfo,    
+            footer: "*BMB XMD GitHub Repository*",    
+            contextInfo: {    
+                forwardingScore: 999,    
+                isForwarded: true,    
+            },    
+        }, { quoted: ms });    
 
-    const currentDate = moment().tz("Africa/Nairobi").format("DD/MM/YYYY HH:mm:ss");
-    
-    const messageContent = `
-    ♦️ *${name} REPO INFO* ♦️
-
-    ⭐ *Name:* ${name}
-    🔻 *Stars:* ${stars.toLocaleString()}
-    🍴 *Forks:* ${forks.toLocaleString()}
-    👀 *Watchers:* ${watchers.toLocaleString()}
-    🚧 *Open Issues:* ${issues.toLocaleString()}
-    👤 *Owner:* ${owner}
-
-    🗓️ *Fetched on:* ${currentDate}
-
-    🔗 *Repo Link:* ${url}
-
-    🚀 Scripted by *bmb xmd*
-
-    Stay connected and follow my updates!
-    `;
-
-    try {
-      await zk.sendMessage(destination, {
-        'text': messageContent,
-        'contextInfo': {
-          'externalAdReply': {
-            'title': "😊 Stay Updated with HansTz",
-            'body': "Tap here for the latest updates!",
-            'thumbnailUrl': "https://files.catbox.moe/roflc0.jpg",
-            'mediaType': 1,
-            'renderLargerThumbnail': true,
-            'mediaUrl': "https://whatsapp.com/channel/0029VawO6hgF6sn7k3SuVU3z",
-            'sourceUrl': "https://whatsapp.com/channel/0029VawO6hgF6sn7k3SuVU3z"
-          }
-        }
-      });
-    } catch (error) {
-      console.error("❌ Error sending GitHub info:", error);
-      repondre("❌ Error sending GitHub info: " + error.message);
-    }
-  });
+    } catch (e) {    
+        console.log("🥵 Error fetching repository data: " + e);    
+        repondre("🥵 Error fetching repository data, please try again later.");    
+    }    
 });
