@@ -4,7 +4,7 @@ const { adams } = require("../Ibrahim/adams");
 
 adams({ nomCom: "git1", catégorie:"Général", reaction: "🌟", nomFichier: __filename }, async (dest, zk, commandeOptions) => {
   const githubRepo = 'https://github.com/bmb200/B.M.B-XMD';
-  const img = 'https://files.catbox.moe/idioc5.jpg';
+  const img = 'https://files.catbox.moe/xwpu18.png';
 
   try {
     const response = await fetch(githubRepo);
