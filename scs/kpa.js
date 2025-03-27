@@ -1,113 +1,47 @@
-const { adams } = require('../Ibrahim/adams');
-const { default: axios } = require('axios');
-const pkg = require('@whiskeysockets/baileys');
-const { generateWAMessageFromContent, prepareWAMessageMedia } = pkg;
-
-
-
-// Unified Rent/Code Command
-const nomComList = ["rent", "code", "pair", "session"]; // Add your desired commands here
-
-nomComList.forEach((nomCom) => {
-  adams({ nomCom, reaction: "⚡", categorie: "User" }, async (dest, zk, commandeOptions) => {
-    const { repondre, arg, ms } = commandeOptions;
-
-    try {
-      if (!arg || arg.length === 0) {
-        return repondre(`Example Usage: .${nomCom} 255xxxxxxxx.`);
-      }
-
-      await repondre('ɢᴇɴᴇʀᴀᴛɪɴɢ ʏᴏᴜʀ ᴄᴏᴅᴇ.........');
-      const text = encodeURIComponent(arg.join(' '));
-      const apiUrl = `https://bmb-session-1.onrender.com/pair?number=${text}`;
-
-      const response = await axios.get(apiUrl);
-      const result = response.data;
-
-      if (result && result.code) {
-        const getsess = result.code;
-
-        // First message with just the code
-        const codeMessage = generateWAMessageFromContent(dest, {
-          extendedTextMessage: {
-            text: `\`\`\`${getsess}\`\`\``
-          }
-        }, {});
-
-        await zk.relayMessage(dest, codeMessage.message, {
-          messageId: codeMessage.key.id
-        });
-
-        // Second message with additional information
-        const captionMessage = generateWAMessageFromContent(dest, {
-          extendedTextMessage: {
-            text: '*ᴄᴏᴘʏ ᴛʜᴇ ᴀʙᴏᴠᴇ ᴄᴏᴅᴇ ᴀɴᴅ ʟɪɴᴋ ɪᴛ ᴛᴏ ʏᴏᴜʀ ᴡʜᴀᴛsᴀᴘᴘ*\n\n*𝙱.𝙼.𝙱-𝚇𝙼𝙳*\n\n*ᴍᴀᴅᴇ ʙʏ 𝙱.𝙼.𝙱*'
-          }
-        }, {});
-
-        await zk.relayMessage(dest, captionMessage.message, {
-          messageId: captionMessage.key.id
-        });
-
-      } else {
-        throw new Error('Invalid response from API.');
-      }
-    } catch (error) {
-      console.error('Error getting API response:', error.message);
-      repondre('Error getting response from API.');
-    }
-  });
-});
-// Scan Command
-adams({ nomCom: "scan", reaction: "🔍", categorie: "pair" }, async (dest, zk, commandeOptions) => {
-  const { repondre } = commandeOptions;
-
+const {
+  adams
+} = require("../Ibrahim/adams");
+const {
+  default: axios
+} = require("axios");
+adams({
+  "nomCom": "apk",
+  "aliases": ["app", "playstore"],
+  "reaction": "✨",
+  "categorie": "Download"
+}, async (_0x56b9e7, _0xc2e8ad, _0x1b17b1) => {
+  const {
+    repondre: _0x5c2a00,
+    arg: _0x25c412,
+    ms: _0x37fac7
+  } = _0x1b17b1;
   try {
-    const instructions = `
-*📖 HOW TO GET 𝙱.𝙼.𝙱-𝚇𝙼𝙳 SESSION:*
-
-1️⃣ **Open the link below**
-
-> https://bmb-session-1.onrender.com
-
-2️⃣ **Enter Your WhatsApp Number**  
-
-   👉 Type your WhatsApp number with your country code without (+) (e.g., 255xxxxxxxx) and tap **Submit**.  
-
-3️⃣ **Receive a Code**  
-
-   👉 b.m.b Tech will send a short code, Copy it to your keyboard.  
-
-4️⃣ **Check WhatsApp Notification**  
-
-   👉 WhatsApp will notify you. Tap on the notification and enter the code sent by Ibrahim Tech.  
-
-5️⃣ **Wait for the Session**  
-
-   👉 After loading, it will link then bmb Tech will send a session to your WhatsApp number.  
-
-6️⃣ **Copy and Share the Session**  
-
-   👉 Copy the long session and send it to your deployer.  
-
-*💻 Powered by 𝙱.𝙼.𝙱-𝚇𝙼𝙳*  
-
-
-> Made by 𝙱.𝙼.𝙱-𝚇𝙼𝙳
-    `;
-
-    const instructionMessage = generateWAMessageFromContent(dest, {
-      extendedTextMessage: {
-        text: instructions
-      }
-    }, {});
-
-    await zk.relayMessage(dest, instructionMessage.message, {
-      messageId: instructionMessage.key.id
+    const _0x52b2e1 = _0x25c412.join(" ");
+    if (!_0x52b2e1) {
+      return _0x5c2a00("Please provide an app name.");
+    }
+    const _0x411f21 = await axios.get("https://bk9.fun/search/apk?q=" + _0x52b2e1);
+    const _0x1d223e = _0x411f21.data;
+    if (!_0x1d223e.BK9 || _0x1d223e.BK9.length === 0x0) {
+      return _0x5c2a00("No app found with that name, please try again.");
+    }
+    const _0x319cc0 = await axios.get("https://bk9.fun/download/apk?id=" + _0x1d223e.BK9[0x0].id);
+    const _0x23e2f7 = _0x319cc0.data;
+    if (!_0x23e2f7.BK9 || !_0x23e2f7.BK9.dllink) {
+      return _0x5c2a00("Unable to find the download link for this app.");
+    }
+    await _0xc2e8ad.sendMessage(_0x56b9e7, {
+      "document": {
+        "url": _0x23e2f7.BK9.dllink
+      },
+      "fileName": _0x23e2f7.BK9.name + ".apk",
+      "mimetype": "application/vnd.android.package-archive",
+      "caption": "B.M.B-XMD🌟"
+    }, {
+      "quoted": _0x37fac7
     });
-  } catch (error) {
-    console.error('Error sending instructions:', error.message);
-    repondre('Error sending instructions.');
+  } catch (_0x340556) {
+    console.error("Error during APK download process:", _0x340556);
+    _0x5c2a00("APK download failed. Please try again later.");
   }
 });
-          
