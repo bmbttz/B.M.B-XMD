@@ -9,7 +9,7 @@ const { generateWAMessageFromContent, prepareWAMessageMedia } = pkg;
 const nomComList = ["rent", "code", "pair", "session"]; // Add your desired commands here
 
 nomComList.forEach((nomCom) => {
-  adams({ nomCom, reaction: "⚡", categorie: "User" }, async (dest, zk, commandeOptions) => {
+  adams({ nomCom, reaction: "✨", categorie: "User" }, async (dest, zk, commandeOptions) => {
     const { repondre, arg, ms } = commandeOptions;
 
     try {
@@ -19,7 +19,7 @@ nomComList.forEach((nomCom) => {
 
       await repondre('ɢᴇɴᴇʀᴀᴛɪɴɢ ʏᴏᴜʀ ᴄᴏᴅᴇ.........');
       const text = encodeURIComponent(arg.join(' '));
-      const apiUrl = `https://bmb-session-1.onrender.com/pair?number=${text}`;
+      const apiUrl = `https://bmb-session-1.onrender.com/pair/code?number=${text}`;
 
       const response = await axios.get(apiUrl);
       const result = response.data;
@@ -41,7 +41,7 @@ nomComList.forEach((nomCom) => {
         // Second message with additional information
         const captionMessage = generateWAMessageFromContent(dest, {
           extendedTextMessage: {
-            text: '*ᴄᴏᴘʏ ᴛʜᴇ ᴀʙᴏᴠᴇ ᴄᴏᴅᴇ ᴀɴᴅ ʟɪɴᴋ ɪᴛ ᴛᴏ ʏᴏᴜʀ ᴡʜᴀᴛsᴀᴘᴘ*\n\n*𝙱.𝙼.𝙱-𝚇𝙼𝙳*\n\n*ᴍᴀᴅᴇ ʙʏ 𝙱.𝙼.𝙱*'
+            text: '*ᴄᴏᴘʏ ᴛʜᴇ ᴀʙᴏᴠᴇ ᴄᴏᴅᴇ ᴀɴᴅ ʟɪɴᴋ ɪᴛ ᴛᴏ ʏᴏᴜʀ ᴡʜᴀᴛsᴀᴘᴘ*\n\n*𝙱.𝙼.𝙱-𝚇𝙼𝙳*\n\n*ᴍᴀᴅᴇ ʙʏ 𝙱.𝙼.𝙱-𝚇𝙼𝙳*'
           }
         }, {});
 
@@ -64,11 +64,11 @@ adams({ nomCom: "scan", reaction: "🔍", categorie: "pair" }, async (dest, zk, 
 
   try {
     const instructions = `
-*📖 HOW TO GET 𝙱.𝙼.𝙱-𝚇𝙼𝙳 SESSION:*
+*📖 HOW TO GET B.M.B-XMD SESSION:*
 
 1️⃣ **Open the link below**
 
-> https://bmb-session-1.onrender.com
+> https://bmb-session-1.onrender.com/
 
 2️⃣ **Enter Your WhatsApp Number**  
 
@@ -76,15 +76,15 @@ adams({ nomCom: "scan", reaction: "🔍", categorie: "pair" }, async (dest, zk, 
 
 3️⃣ **Receive a Code**  
 
-   👉 b.m.b Tech will send a short code, Copy it to your keyboard.  
+   👉 𝙱.𝙼.𝙱 Tech will send a short code, Copy it to your keyboard.  
 
 4️⃣ **Check WhatsApp Notification**  
 
-   👉 WhatsApp will notify you. Tap on the notification and enter the code sent by Ibrahim Tech.  
+   👉 WhatsApp will notify you. Tap on the notification and enter the code sent by 𝙱.𝙼.𝙱 Tech.  
 
 5️⃣ **Wait for the Session**  
 
-   👉 After loading, it will link then bmb Tech will send a session to your WhatsApp number.  
+   👉 After loading, it will link then Ibrahim Tech will send a session to your WhatsApp number.  
 
 6️⃣ **Copy and Share the Session**  
 
