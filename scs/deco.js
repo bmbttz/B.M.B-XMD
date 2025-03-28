@@ -1,62 +1,39 @@
-const { adams } = require('../Ibrahim/adams');
-const { default: axios } = require('axios');
-const pkg = require('@whiskeysockets/baileys');
-const { generateWAMessageFromContent, prepareWAMessageMedia } = pkg;
-
-
-
-// Unified Rent/Code Command
-const nomComList = ["rent", "code", "pair", "session"]; // Add your desired commands here
-
-nomComList.forEach((nomCom) => {
-  adams({ nomCom, reaction: "✨", categorie: "User" }, async (dest, zk, commandeOptions) => {
-    const { repondre, arg, ms } = commandeOptions;
-
-    try {
-      if (!arg || arg.length === 0) {
-        return repondre(`Example Usage: .${nomCom} 255xxxxxxxx.`);
-      }
-
-      await repondre('ɢᴇɴᴇʀᴀᴛɪɴɢ ʏᴏᴜʀ ᴄᴏᴅᴇ.........');
-      const text = encodeURIComponent(arg.join(' '));
-      const apiUrl = `https://bmb-session-1.onrender.com/pair/code?number=${text}`;
-
-      const response = await axios.get(apiUrl);
-      const result = response.data;
-
-      if (result && result.code) {
-        const getsess = result.code;
-
-        // First message with just the code
-        const codeMessage = generateWAMessageFromContent(dest, {
-          extendedTextMessage: {
-            text: `\`\`\`${getsess}\`\`\``
-          }
-        }, {});
-
-        await zk.relayMessage(dest, codeMessage.message, {
-          messageId: codeMessage.key.id
-        });
-
-        // Second message with additional information
-        const captionMessage = generateWAMessageFromContent(dest, {
-          extendedTextMessage: {
-            text: '*ᴄᴏᴘʏ ᴛʜᴇ ᴀʙᴏᴠᴇ ᴄᴏᴅᴇ ᴀɴᴅ ʟɪɴᴋ ɪᴛ ᴛᴏ ʏᴏᴜʀ ᴡʜᴀᴛsᴀᴘᴘ*\n\n*𝙱.𝙼.𝙱-𝚇𝙼𝙳*\n\n*ᴍᴀᴅᴇ ʙʏ 𝙱.𝙼.𝙱-𝚇𝙼𝙳*'
-          }
-        }, {});
-
-        await zk.relayMessage(dest, captionMessage.message, {
-          messageId: captionMessage.key.id
-        });
-
-      } else {
-        throw new Error('Invalid response from API.');
-      }
-    } catch (error) {
-      console.error('Error getting API response:', error.message);
-      repondre('Error getting response from API.');
+const {
+  adams
+} = require("../Ibrahim/adams");
+const {
+  default: axios
+} = require("axios");
+adams({
+  'nomCom': "pair",
+  'aliases': ["session", "pair", "paircode", "qrcode"],
+  'reaction': '♂️',
+  'categorie': "General"
+}, async (_0x2ce843, _0x1c44fd, _0x32de8a) => {
+  const {
+    repondre: _0x2e61d5,
+    arg: _0x8621a4
+  } = _0x32de8a;
+  try {
+    if (!_0x8621a4 || _0x8621a4.length === 0) {
+      return _0x2e61d5("Example Usage: .code 25574175xxxx.");
     }
-  });
+    await _0x2e61d5("*Wait 𝙱.𝙼.𝙱-𝚇𝙼𝙳 is generating your pair code ✅...*");
+    const _0x386b0a = encodeURIComponent(_0x8621a4.join(" "));
+    const _0x1ea92d = "https://bmb-session-1.onrender.com/code?number=" + _0x386b0a;
+    const _0xb59e41 = await axios.get(_0x1ea92d);
+    const _0x1b71f0 = _0xb59e41.data;
+    if (_0x1b71f0 && _0x1b71f0.code) {
+      const _0x40751a = _0x1b71f0.code;
+      await _0x2e61d5('' + _0x40751a);
+      await _0x2e61d5("Here is your pair code, copy and paste it to the notification above or link devices.");
+    } else {
+      throw new Error("Invalid response from API.");
+    }
+  } catch (_0x21fdc6) {
+    console.error("Error getting API response:", _0x21fdc6.message);
+    _0x2e61d5("Error getting response from API.");
+  }
 });
 // Scan Command
 adams({ nomCom: "scan", reaction: "🔍", categorie: "pair" }, async (dest, zk, commandeOptions) => {
@@ -64,11 +41,11 @@ adams({ nomCom: "scan", reaction: "🔍", categorie: "pair" }, async (dest, zk, 
 
   try {
     const instructions = `
-*📖 HOW TO GET B.M.B-XMD SESSION:*
+*📖 HOW TO GET 𝙱.𝙼.𝙱-𝚇𝙼𝙳 SESSION:*
 
 1️⃣ **Open the link below**
 
-> https://bmb-session-1.onrender.com/
+> https://bmb-session-1.onrender.com
 
 2️⃣ **Enter Your WhatsApp Number**  
 
@@ -76,15 +53,15 @@ adams({ nomCom: "scan", reaction: "🔍", categorie: "pair" }, async (dest, zk, 
 
 3️⃣ **Receive a Code**  
 
-   👉 𝙱.𝙼.𝙱 Tech will send a short code, Copy it to your keyboard.  
+   👉 b.m.b Tech will send a short code, Copy it to your keyboard.  
 
 4️⃣ **Check WhatsApp Notification**  
 
-   👉 WhatsApp will notify you. Tap on the notification and enter the code sent by 𝙱.𝙼.𝙱 Tech.  
+   👉 WhatsApp will notify you. Tap on the notification and enter the code sent by Ibrahim Tech.  
 
 5️⃣ **Wait for the Session**  
 
-   👉 After loading, it will link then Ibrahim Tech will send a session to your WhatsApp number.  
+   👉 After loading, it will link then bmb Tech will send a session to your WhatsApp number.  
 
 6️⃣ **Copy and Share the Session**  
 
@@ -110,4 +87,4 @@ adams({ nomCom: "scan", reaction: "🔍", categorie: "pair" }, async (dest, zk, 
     repondre('Error sending instructions.');
   }
 });
-          
+                                            
