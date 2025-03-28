@@ -347,7 +347,7 @@ adams({ nomCom: "trt", categorie: "Conversion", reaction: "👨🏿‍💻" }, a
 }) ;
 
 
-adams({ nomCom: "url", categorie: "Conversion", reaction: "👨🏿‍💻" }, async (origineMessage, zk, commandeOptions) => {
+adams({ nomCom: "urr", categorie: "Conversion", reaction: "👨🏿‍💻" }, async (origineMessage, zk, commandeOptions) => {
   const { msgRepondu, repondre } = commandeOptions;
 
   if (!msgRepondu) {
