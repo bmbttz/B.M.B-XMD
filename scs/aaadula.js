@@ -2,7 +2,7 @@ const util = require('util');
 const fs = require('fs-extra');
 const axios = require('axios');
 const { adams } = require(__dirname + "/../Ibrahim/adams");
-const { format } = require(__dirname + "/../adams/mesfonctions");
+const { format } = require(__dirname + "/../Ibrahim/mesfonctions");
 const os = require("os");
 const moment = require("moment-timezone");
 const s = require(__dirname + "/../config");
@@ -27,7 +27,7 @@ const runtime = function (seconds) {
 // Function to fetch GitHub repo data
 const fetchGitHubStats = async () => {
     try {
-        const repo = 'Devbmb/B.M.B-XMD'; // Replace with your repo
+        const repo = 'Devibraah/B.M.B-XMD'; // Replace with your repo
         const response = await axios.get(`https://api.github.com/repos/${repo}`);
         const forks = response.data.forks_count;
         const stars = response.data.stargazers_count;
@@ -39,7 +39,7 @@ const fetchGitHubStats = async () => {
     }
 };
 
-adams({ nomCom: "bmb", categorie: "General" }, async (dest, zk, commandeOptions) => {
+adams({ nomCom: "be", categorie: "General" }, async (dest, zk, commandeOptions) => {
     let { ms, repondre, prefixe, nomAuteurMessage } = commandeOptions;
     let { cm } = require(__dirname + "/../Ibrahim/adams");
     var coms = {};
@@ -66,7 +66,7 @@ adams({ nomCom: "bmb", categorie: "General" }, async (dest, zk, commandeOptions)
 
     let infoMsg = `
 ╭─────═━┈┈━═──━┈⊷
-┇ ʙᴏᴛ ɴᴀᴍᴇ: *B.M.B-XMD*
+┇ ʙᴏᴛ ɴᴀᴍᴇ: *𝙱.𝙼.𝙱-𝚇𝙼𝙳*
 ┇ ᴍᴏᴅᴇ: *${mode}*
 ┇ ᴘʀᴇғɪx: *[ ${prefixe} ]*
 ┇ ᴘʟᴀᴛғᴏʀᴍ: *${os.platform()}*
@@ -99,9 +99,9 @@ adams({ nomCom: "bmb", categorie: "General" }, async (dest, zk, commandeOptions)
             contextInfo: {
                 mentionedJid: [nomAuteurMessage],
                 externalAdReply: {
-                    body: "B.M.B-XMD",
-                    thumbnailUrl: "https://files.catbox.moe/hjnyy9.jpg",
-                    sourceUrl: 'https://whatsapp.com/channel/0029Vb2eknR59PwL1OK4wR24',
+                    body: "𝙱.𝙼.𝙱-𝚇𝙼𝙳",
+                    thumbnailUrl: "https://files.catbox.moe/votefa.jpg",
+                    sourceUrl: 'https://whatsapp.com/channel/0029VawO6hgF6sn7k3SuVU3z',
                     mediaType: 1,
                     renderLargerThumbnail: true
                 }
@@ -111,16 +111,16 @@ adams({ nomCom: "bmb", categorie: "General" }, async (dest, zk, commandeOptions)
         // Send audio with caption
         await zk.sendMessage(dest, { 
             audio: { 
-                url: "https://litter.catbox.moe/f16olr.mp3" // Replace with your audio URL
+                url: "https://files.catbox.moe/bewdug.mp3" // Replace with your audio URL
             }, 
             mimetype: 'audio/mp4', 
             ptt: false, // Set to true if you want it as a voice note
-            caption: "B.M.B XMD SONG",
+            caption: "B.M.B-XMD SONG",
             contextInfo: {
                 externalAdReply: {
-                    body: "B.M.B MD",
-                    thumbnailUrl: "https://files.catbox.moe/hjnyy9.jpg",
-                    sourceUrl: 'https://whatsapp.com/channel/0029Vb2eknR59PwL1OK4wR24',
+                    body: "B.M.B-TECH",
+                    thumbnailUrl: "https://files.catbox.moe/votefa.jpg",
+                    sourceUrl: 'https://whatsapp.com/channel/0029VawO6hgF6sn7k3SuVU3z',
                     rendersmallThumbnail: false
                 }
             }
@@ -131,3 +131,4 @@ adams({ nomCom: "bmb", categorie: "General" }, async (dest, zk, commandeOptions)
         repondre("🥵🥵 Menu erreur " + e);
     }
 });
+        
