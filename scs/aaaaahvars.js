@@ -1,5 +1,5 @@
 
-const { adams } = require("../Ibmb-xmd");
+const { adams } = require("../Ibrahim/adams");
 const Heroku = require('heroku-client');
 
 const heroku = new Heroku({ token: process.env.HEROKU_API_KEY });
@@ -37,7 +37,7 @@ adams({
   // Fetch all Heroku environment variables
   try {
     const configVars = await heroku.get(`/apps/${appName}/config-vars`);
-    let message = "🌟 *B.M.B XMD VARS LIST* 🌟\n\n";
+    let message = "🌟 *B.M.B-XMD VARS LIST* 🌟\n\n";
     for (const [key, value] of Object.entries(configVars)) {
       message += `🔑 *${key}=* ${value}\n`;
     }
@@ -135,3 +135,4 @@ adams({
     });
   }
 });
+      
