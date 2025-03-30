@@ -24,17 +24,17 @@ const getMimeType = (url) => (url.endsWith(".wav") ? "audio/wav" : "audio/mpeg")
 
 // Menu images and thumbnail URLs
 const menuImages = [
-    "https://files.catbox.moe/ntmx5v.jpeg",
+    "https://files.catbox.moe/3ats6w.jpg",
     "https://files.catbox.moe/nnp1zf.jpeg",
     "https://files.catbox.moe/3en2sc.jpeg",
     "https://files.catbox.moe/bddwnw.jpeg",
-    "https://files.catbox.moe/f6zee8.jpeg",
-    "https://files.catbox.moe/dd93hl.jpg",
-    "https://files.catbox.moe/omgszj.jpg",
-    "https://files.catbox.moe/sf6xgk.jpg",
-    "https://files.catbox.moe/nwvoq3.jpg",
-    "https://files.catbox.moe/040de7.jpeg",
-    "https://files.catbox.moe/3qkejj.jpeg",
+    "https://files.catbox.moe/votefa.jpg",
+    "https://files.catbox.moe/8piaax.jpg",
+    "https://files.catbox.moe/zjq9mw.jpg",
+    "https://files.catbox.moe/2pxc8g.jpg",
+    "https://files.catbox.moe/votefa.jpg",
+    "https://files.catbox.moe/zjq9mw.jpg",
+    "https://files.catbox.moe/8piaax.jpg",
 ];
 const randomImage = () => menuImages[Math.floor(Math.random() * menuImages.length)];
 
@@ -94,7 +94,7 @@ adams({ nomCom: "menu", categorie: "General" }, async (dest, zk, commandeOptions
 
         let categoryCommands = coms[cat];
         for (let i = 0; i < categoryCommands.length; i++) {
-            commandList += `💮 ${categoryCommands[i]}\n`; // Display commands in a list
+            commandList += `➡️ ${categoryCommands[i]}\n`; // Display commands in a list
         }
         commandList += `\n`;
     });
@@ -224,16 +224,17 @@ const getMimeType = (url) => (url.endsWith(".wav") ? "audio/wav" : "audio/mpeg")
 
 // Menu images and thumbnail URLs
 const menuImages = [
-    "https://files.catbox.moe/13i93y.jpeg",
-    "https://files.catbox.moe/2696sn.jpeg",
-    "https://files.catbox.moe/soj3q4.jpeg",
+    "https://files.catbox.moe/3ats6w.jpg",
+    "https://files.catbox.moe/nnp1zf.jpeg",
+    "https://files.catbox.moe/3en2sc.jpeg",
     "https://files.catbox.moe/bddwnw.jpeg",
-    "https://files.catbox.moe/f6zee8.-jpeg",
-    "https://files.catbox.moe/omgszj.jpg",
-    "https://files.catbox.moe/sf6xgk.jpg",
-    "https://files.catbox.moe/nwvoq3.jpg",
-    "https://files.catbox.moe/040de7.jpeg",
-    "https://files.catbox.moe/3qkejj.jpeg",
+    "https://files.catbox.moe/votefa.jpg",
+    "https://files.catbox.moe/8piaax.jpg",
+    "https://files.catbox.moe/zjq9mw.jpg",
+    "https://files.catbox.moe/2pxc8g.jpg",
+    "https://files.catbox.moe/votefa.jpg",
+    "https://files.catbox.moe/zjq9mw.jpg",
+    "https://files.catbox.moe/8piaax.jpg",
 ];
 const randomImage = () => menuImages[Math.floor(Math.random() * menuImages.length)];
 
@@ -293,7 +294,7 @@ adams({ nomCom: "menu", categorie: "General" }, async (dest, zk, commandeOptions
 
         let categoryCommands = coms[cat];
         for (let i = 0; i < categoryCommands.length; i++) {
-            commandList += `💮 ${categoryCommands[i]}   `;
+            commandList += `➡️ ${categoryCommands[i]}   `;
             if ((i + 1) % 3 === 0 || i === categoryCommands.length - 1) commandList += `\n`;
         }
         commandList += `\n`;
